@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 0abc317ebb1ceed478b660afcb8b47b2
+timeCreated: 1503397061
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98505
+  packageName: Loading screen animation
+  packageVersion: 1.0
+  assetPath: Assets/loadingBar/scripts/loadingcolorful.cs
+  uploadId: 202904

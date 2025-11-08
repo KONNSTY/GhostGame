@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 52c20235aed041c8b9404c87133cadb3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191881
+  packageName: Farming Engine
+  packageVersion: 1.21
+  assetPath: Assets/FarmingEngine/Prefabs/FX/WateringFX.prefab
+  uploadId: 720558

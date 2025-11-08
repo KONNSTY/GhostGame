@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 00b1fe4583db1474d9cf64957fb6b70f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191881
+  packageName: Farming Engine
+  packageVersion: 1.21
+  assetPath: Assets/FarmingEngine/Prefabs/Items/Pitchfork.prefab
+  uploadId: 720558

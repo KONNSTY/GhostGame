@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: df1b3de23278c84408c1fdb68891dbf7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191881
+  packageName: Farming Engine
+  packageVersion: 1.21
+  assetPath: Assets/FarmingEngine/Materials/Window.mat
+  uploadId: 720558

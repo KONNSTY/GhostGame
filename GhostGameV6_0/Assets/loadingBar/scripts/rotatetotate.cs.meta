@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: af420f04bf9431a419aed1cc0ec286c8
+timeCreated: 1503321943
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98505
+  packageName: Loading screen animation
+  packageVersion: 1.0
+  assetPath: Assets/loadingBar/scripts/rotatetotate.cs
+  uploadId: 202904

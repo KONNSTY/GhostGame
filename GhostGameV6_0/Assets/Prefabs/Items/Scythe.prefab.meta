@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b34f4cd6d5f37aa448406be301e18252
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191881
+  packageName: Farming Engine
+  packageVersion: 1.21
+  assetPath: Assets/FarmingEngine/Prefabs/Items/Scythe.prefab
+  uploadId: 720558

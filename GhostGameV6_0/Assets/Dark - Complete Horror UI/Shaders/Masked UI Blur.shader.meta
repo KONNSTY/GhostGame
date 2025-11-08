@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 5ec3b8762a7167342a18aa2dac2dd3b4
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 200569
+  packageName: Dark - Complete Horror UI
+  packageVersion: 2.1.9
+  assetPath: Assets/Dark - Complete Horror UI/Shaders/Masked UI Blur.shader
+  uploadId: 759022

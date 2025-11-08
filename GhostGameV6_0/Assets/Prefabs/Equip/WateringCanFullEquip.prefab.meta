@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1aa4674b59154051992d82cfa76b1fa0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191881
+  packageName: Farming Engine
+  packageVersion: 1.21
+  assetPath: Assets/FarmingEngine/Prefabs/Equip/WateringCanFullEquip.prefab
+  uploadId: 720558

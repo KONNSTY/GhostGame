@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d12cf1d4f55b45de969440a3ca8c28a1
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191881
+  packageName: Farming Engine
+  packageVersion: 1.21
+  assetPath: Assets/FarmingEngine/Prefabs/Items/Shovel.prefab
+  uploadId: 720558

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 4405ad7bc3a39e44cb07de5208266f4b
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 200569
+  packageName: Dark - Complete Horror UI
+  packageVersion: 2.1.9
+  assetPath: Assets/Dark - Complete Horror UI/Shaders/UI Particle Additive.shader
+  uploadId: 759022

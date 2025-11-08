@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 8c61e894aa456f64aa8df77c4566bc10
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Larke
+  fontNames:
+  - Larke
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 200569
+  packageName: Dark - Complete Horror UI
+  packageVersion: 2.1.9
+  assetPath: Assets/Dark - Complete Horror UI/Fonts/Larke Sans Light.ttf
+  uploadId: 759022

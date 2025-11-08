@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e95013914b014c7b8e7bb3eafcd1c360
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191881
+  packageName: Farming Engine
+  packageVersion: 1.21
+  assetPath: Assets/FarmingEngine/Prefabs/FX/SlingProjectile.prefab
+  uploadId: 720558

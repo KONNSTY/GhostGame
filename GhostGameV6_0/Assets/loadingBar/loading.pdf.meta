@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6858628bceb38af43964485a4531ddc7
+timeCreated: 1506420266
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98505
+  packageName: Loading screen animation
+  packageVersion: 1.0
+  assetPath: Assets/loadingBar/loading.pdf
+  uploadId: 202904

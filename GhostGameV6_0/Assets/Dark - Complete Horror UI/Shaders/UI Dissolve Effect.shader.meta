@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 38c8011ffe4ca46888aba954dfe16391
+timeCreated: 1524487545
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 200569
+  packageName: Dark - Complete Horror UI
+  packageVersion: 2.1.9
+  assetPath: Assets/Dark - Complete Horror UI/Shaders/UI Dissolve Effect.shader
+  uploadId: 759022

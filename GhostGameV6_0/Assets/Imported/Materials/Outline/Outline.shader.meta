@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: cb99ad632a2a4f0ca9d935f380b71761
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191881
+  packageName: Farming Engine
+  packageVersion: 1.21
+  assetPath: Assets/FarmingEngine/Materials/Outline/Outline.shader
+  uploadId: 720558

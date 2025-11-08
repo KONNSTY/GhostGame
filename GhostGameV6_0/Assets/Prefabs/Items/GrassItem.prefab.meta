@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2b3d147392fe4daab664e3c53f5944d8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191881
+  packageName: Farming Engine
+  packageVersion: 1.21
+  assetPath: Assets/FarmingEngine/Prefabs/Items/GrassItem.prefab
+  uploadId: 720558
