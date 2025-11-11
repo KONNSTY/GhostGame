@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: bf82169728589cb40ab39408bc144c8f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -97,7 +97,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -138,7 +137,6 @@ Material:
     - _SwayStartingPoint: -1.8
     - _SwayStrength: 0.6
     - _UVSec: 0
-    - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
