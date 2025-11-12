@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 014c75eecfd32e8408be368612f8be0e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 198480
+  packageName: 'Hylophobia: Stylized Forest'
+  packageVersion: 1.1.1
+  assetPath: Assets/Distant Lands/Hylophobia - Stylized Forest/Contents/Materials/Shaders/HueVariation.asset
+  uploadId: 771380

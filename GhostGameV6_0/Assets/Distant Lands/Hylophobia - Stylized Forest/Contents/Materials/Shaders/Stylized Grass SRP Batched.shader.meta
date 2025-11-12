@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e18f79f702776dc4c943502e33fba6e7
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 198480
+  packageName: 'Hylophobia: Stylized Forest'
+  packageVersion: 1.1.1
+  assetPath: Assets/Distant Lands/Hylophobia - Stylized Forest/Contents/Materials/Shaders/Stylized
+    Grass SRP Batched.shader
+  uploadId: 771380

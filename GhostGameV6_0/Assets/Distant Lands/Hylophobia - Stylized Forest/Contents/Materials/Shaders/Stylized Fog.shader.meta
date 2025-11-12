@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 6490db4c7a37d8349b85b261b7ff5cea
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 198480
+  packageName: 'Hylophobia: Stylized Forest'
+  packageVersion: 1.1.1
+  assetPath: Assets/Distant Lands/Hylophobia - Stylized Forest/Contents/Materials/Shaders/Stylized
+    Fog.shader
+  uploadId: 771380

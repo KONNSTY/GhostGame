@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 957b96a3ba84b7a4e872de08e23858c8
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 198480
+  packageName: 'Hylophobia: Stylized Forest'
+  packageVersion: 1.1.1
+  assetPath: Assets/Distant Lands/Hylophobia - Stylized Forest/Contents/Materials/Shaders/Stylized
+    Water.shader
+  uploadId: 771380

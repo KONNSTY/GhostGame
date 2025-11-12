@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: a5adcec1817dd1340b41a82e17c4a62f
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 198480
+  packageName: 'Hylophobia: Stylized Forest'
+  packageVersion: 1.1.1
+  assetPath: Assets/Distant Lands/Hylophobia - Stylized Forest/Contents/Materials/Shaders/Stylized
+    Grass.shader
+  uploadId: 771380
