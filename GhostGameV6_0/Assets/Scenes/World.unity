@@ -2487,7 +2487,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 18167
+    m_Bits: 50935
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -7582,7 +7582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &988930102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7594,12 +7594,12 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 49543280f86a15a45ba139345050da00, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 0c2c7b60321472e41adac75e45d53d0d, type: 2}
 --- !u!4 &988930103
 Transform:
   m_ObjectHideFlags: 0
@@ -14251,7 +14251,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1053
+    m_Bits: 30463
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: b1e569a3c3f1045b8b89d02684ff2963, type: 2}
   m_TargetDisplay: 0
