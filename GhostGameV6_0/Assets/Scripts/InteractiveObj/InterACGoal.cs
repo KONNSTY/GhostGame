@@ -47,7 +47,7 @@ public class InterACGoal : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player"))
         {
             gm.currentMIssion = missiontype;
 

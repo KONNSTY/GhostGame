@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameMode : MonoBehaviour
 {
-    public int aiSpawners = 3;
+    public int aiSpawners;
 
     public GameObject DirectionalLight;
     private Animator dirLightAnimator;
@@ -148,6 +148,7 @@ public class GameMode : MonoBehaviour
 
             case MissionType.Mission1:
                 missionText.text = Mission1;
+                aiSpawners = 1;
                 // ✅ KORRIGIERT: Besserer Null-Check
                 NPCFollowObj[0].isSebastianFollowing = true;
          GoalArray[1].SetActive(true);
@@ -160,6 +161,7 @@ public class GameMode : MonoBehaviour
 
             case MissionType.Mission2:
                 missionText.text = Mission2;
+                  aiSpawners = 1;
                 // ✅ HINZUGEFÜGT: Sebastian stoppt zu folgen
                 GoalArray[2].SetActive(true);
                 NPCFollowObj[0].isSebastianFollowing = false;
@@ -181,7 +183,7 @@ public class GameMode : MonoBehaviour
             case MissionType.Mission3:
                 missionText.text = Mission3;
 
-          
+            aiSpawners = 3;
 
                     GoalArray[3].SetActive(true);
 
@@ -201,7 +203,7 @@ public class GameMode : MonoBehaviour
             case MissionType.Mission4:
                 missionText.text = Mission4;
                 GoalArray[4].SetActive(true);
-        
+           aiSpawners = 3;
                 weaponInLight.isUnableToUsWeapon = false;
 
 
@@ -219,7 +221,7 @@ public class GameMode : MonoBehaviour
 
             case MissionType.Mission5:
                 missionText.text = Mission5;
-
+   aiSpawners = 3;
                 GoalArray[5].SetActive(true);
                 weaponInLight.isUnableToUsWeapon = false;
 
@@ -238,7 +240,7 @@ public class GameMode : MonoBehaviour
                 missionText.text = Mission6;
                 GoalArray[6].SetActive(true);
                 weaponInLight.isUnableToUsWeapon = false;
-
+   aiSpawners = 3;
                 if (isMissionNotLoadAndNight == false)
                 {
                     dirLightAnimator.SetBool("Night", true);
@@ -254,7 +256,7 @@ public class GameMode : MonoBehaviour
 
                 GoalArray[7].SetActive(true);
                 weaponInLight.isUnableToUsWeapon = false;
-
+   aiSpawners = 3;
                 if (isMissionNotLoadAndNight == false)
                 {
                     dirLightAnimator.SetBool("Night", true);
@@ -267,7 +269,7 @@ public class GameMode : MonoBehaviour
 
             case MissionType.Mission8:
                 missionText.text = Mission8;
-
+   aiSpawners = 3;
                 weaponInLight.isUnableToUsWeapon = false;
 
                    if (GoalArray[8] != null)
@@ -312,7 +314,7 @@ public class GameMode : MonoBehaviour
                 dirLightAnimator.SetBool("Night", false);
                 NPCFollowObj[2].isSisterFollowing = true;
                 GoalArray[9].SetActive(true);
-
+   aiSpawners = 3;
                 isMissionNotLoadAndNight = false;
               
 

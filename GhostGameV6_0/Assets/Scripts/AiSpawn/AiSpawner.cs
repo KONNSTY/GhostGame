@@ -1,6 +1,4 @@
 using Unity.Mathematics;
-using Unity.Profiling.LowLevel.Unsafe;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AiSpawner : MonoBehaviour
@@ -12,12 +10,10 @@ public class AiSpawner : MonoBehaviour
     public bool canOnlySpawnOnce = false;
 
     private GameObject CircleWallInstance;
-
- 
-
     public GameObject player;
 
     public GameObject aiPrefab;
+    private GameObject circleWallPrefab;
 
     public bool bFinalStarts = false;
 
@@ -42,6 +38,7 @@ public class AiSpawner : MonoBehaviour
         gameModeObj = GameObject.Find("GameMode");
         gameMode = gameModeObj.GetComponent<GameMode>();
         aiPrefab = Resources.Load<GameObject>("Ghosts");
+        circleWallPrefab = Resources.Load<GameObject>("CircleWall Variant");
         WeaponInLight = player.GetComponentInChildren<WeaponInLight>();
         MaxDistance = 10f;
         MinDistance = 5f; // ✅ FIX: MinDistance war nicht initialisiert
@@ -49,13 +46,18 @@ public class AiSpawner : MonoBehaviour
     
     void Update()
     {
-        if (spawnedAIs == null)
+        // Check if any active AIs exist
+        NoAiActive = true;
+        if (spawnedAIs != null)
         {
-            NoAiActive = true;
-        }
-        else
-        {
-            NoAiActive = false;
+            for (int i = 0; i < spawnedAIs.Length; i++)
+            {
+                if (spawnedAIs[i] != null)
+                {
+                    NoAiActive = false;
+                    break;
+                }
+            }
         }
 
         if (gameMode.shouldAiSpawnerAllDeactivate == false)
@@ -68,9 +70,12 @@ public class AiSpawner : MonoBehaviour
                 canSpawnAi = true;
                 isAllowingAiSpawn = false;
         
-                CircleWallInstance = Instantiate(Resources.Load<GameObject>("CircleWall Variant"),
-                                               player.transform.position,
-                                               quaternion.identity);
+                if (circleWallPrefab != null)
+                {
+                    CircleWallInstance = Instantiate(circleWallPrefab,
+                                                   player.transform.position,
+                                                   quaternion.identity);
+                }
             }
             else
             {
@@ -78,7 +83,7 @@ public class AiSpawner : MonoBehaviour
             }
 
             // ✅ KORRIGIERT: Kill Count Check mit Aktion
-            if (WeaponInLight.killCount >= 3 && CircleWallInstance != null)
+            if (WeaponInLight != null && WeaponInLight.killCount >= gameMode.aiSpawners && CircleWallInstance != null)
             {
                 Debug.Log($"🎯 Kill Count erreicht: {WeaponInLight.killCount}");
                 Debug.Log("✅ Zerstöre CircleWall...");
@@ -87,11 +92,10 @@ public class AiSpawner : MonoBehaviour
                 CircleWallInstance = null;
                 WeaponInLight.killCount = 0;
                 isAllowingAiSpawn = true; // Erlaube neues Spawning
-       
             }
 
             // ✅ AI Distance Management (nur wenn spawnedAIs existiert)
-            if (spawnedAIs != null)
+            if (spawnedAIs != null && spawnedAIs.Length > 0)
             {
                 for (int i = 0; i < spawnedAIs.Length; i++)
                 {
@@ -101,7 +105,11 @@ public class AiSpawner : MonoBehaviour
 
                         if (distanceToAI > MaxDistance)
                         {
-                            spawnedAIs[i].GetComponent<AiController>().state = AiController.AiState.WarpToPlayer;
+                            AiController aiController = spawnedAIs[i].GetComponent<AiController>();
+                            if (aiController != null)
+                            {
+                                aiController.state = AiController.AiState.WarpToPlayer;
+                            }
                         }
                     }
                 }
@@ -160,6 +168,13 @@ public class AiSpawner : MonoBehaviour
             return;
         }
 
+        // ✅ FIX: Check if aiPrefab is valid
+        if (aiPrefab == null)
+        {
+            Debug.LogError("aiPrefab ist null! Kann keine AIs spawnen.");
+            return;
+        }
+
         // Array für gespawnte AIs initialisieren
         spawnedAIs = new GameObject[gameMode.aiSpawners];
 
@@ -179,14 +194,13 @@ public class AiSpawner : MonoBehaviour
             spawnedAIs[i] = spawnedAI;
         }
 
-
         canOnlySpawnOnce = true; // Verhindert mehrfaches Spawnen
     }
 
     // Neue Methode zum Zerstören gespawnter AIs
     public void DestroySpawnedAIs()
     {
-        if (spawnedAIs != null)
+        if (spawnedAIs != null && spawnedAIs.Length > 0)
         {
             // ✅ FIX: Vereinfacht - Ihr ursprünglicher Code war zu kompliziert
             for (int i = 0; i < spawnedAIs.Length; i++)

@@ -17,7 +17,7 @@ public class AiController : MonoBehaviour
     public GameObject Ghost;
     public Animator GhostAnimator;
 
-    public float damageToPlayer = 10f;
+    public float damageToPlayer = 5f;
 
     public GameObject ShockEffect;
 
@@ -69,7 +69,7 @@ public class AiController : MonoBehaviour
     public WeaponInLight weaponInLight;
 
     // ✅ FIX: Damage Cooldown hinzufügen
-    private float lastDamageTime = 0f;
+    private float lastDamageTime = 2f;
     private float damageCooldown = 1f;
 
     // ✅ FIX: Coroutine-Control Flags
@@ -412,7 +412,7 @@ public class AiController : MonoBehaviour
     {
         if (isDead) return;
 
-        if (other.CompareTag("Player"))
+        if (other.gameObject.name == "Player")
         {
             state = AiState.AttackPlayer;
             isAttacking = true;
