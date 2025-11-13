@@ -19,7 +19,7 @@ public class GameMode : MonoBehaviour
 
     private bool isMissionNotLoadAndNight = false;
 
-
+public bool BossDefeated = false;
  
 
     public string Mission0;
@@ -272,6 +272,10 @@ public class GameMode : MonoBehaviour
    aiSpawners = 3;
                 weaponInLight.isUnableToUsWeapon = false;
 
+
+                if(BossDefeated == true)
+                {
+
                    if (GoalArray[8] != null)
                 {
 
@@ -282,6 +286,7 @@ public class GameMode : MonoBehaviour
                 {
                     GoalArray[8] = GameObject.Find("Goal8");
                     GoalArray[8].SetActive(true);
+                }
                 }
 
                 if (isMissionNotLoadAndNight == false)

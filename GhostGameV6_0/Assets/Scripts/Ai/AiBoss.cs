@@ -1,10 +1,11 @@
 using System.Collections;
 using Unity.AI.Navigation;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class AiController : MonoBehaviour
+public class AiBoss : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
     [HideInInspector] public Vector3 playertarget;
@@ -48,7 +49,7 @@ public class AiController : MonoBehaviour
 
     [HideInInspector] public bool shouldGoback = false;
 
-    public float speed = 4f;
+    public float speed = 7f;
 
     private bool cantDieAgain;
 
@@ -77,6 +78,8 @@ public class AiController : MonoBehaviour
     private bool isWaitRunning = false;
     private bool isAfterAttackRunning = false;
 
+    public GameMode gameMode;
+
     void Start()
     {
         PlayerZeroPos = transform;
@@ -85,6 +88,11 @@ public class AiController : MonoBehaviour
 
         navMeshAgent = GetComponent<NavMeshAgent>();
         EnemyCanvas = GetComponentInChildren<Canvas>();
+
+        if(gameMode == null)
+        {
+            gameMode = GameObject.Find("GameMode").GetComponent<GameMode>();
+        }
 
         if (EnemyCanvas != null)
         {
@@ -108,7 +116,7 @@ public class AiController : MonoBehaviour
             GhostAnimator = GetComponentInChildren<Animator>();
         }
 
-        
+        InterEnegeryCrystal = Resources.Load("InterEnegeryCrystal") as GameObject;
         if (InterEnegeryCrystal == null)
         {
             InterEnegeryCrystal = Resources.Load("InterEngryCrystal") as GameObject;
@@ -268,6 +276,8 @@ public class AiController : MonoBehaviour
 
             case AiState.Die:
                 // ✅ FIX: Die State implementiert
+                gameMode.BossDefeated = true;
+
                 if (GhostAnimator != null)
                 {
                     GhostAnimator.SetBool("Dead", true);
@@ -277,7 +287,6 @@ public class AiController : MonoBehaviour
                 if (!shouldDestoryGameObject)
                 {
                     shouldDestoryGameObject = true;
-                    Instantiate(InterEnegeryCrystal, transform.position, Quaternion.identity);
                     Destroy(gameObject, 2f);
                 }
                 break;
