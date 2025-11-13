@@ -19,12 +19,12 @@ TagManager:
   - Player
   - Ai
   - NotVisbleforMap
-  - NPC
-  - Goal
-  - OnlyBigMap
-  - End
   - NavMeshSurface
   - LAKE
+  - OnlyBigMap
+  - End
+  - NPC
+  - Goal
   - 
   - 
   - 

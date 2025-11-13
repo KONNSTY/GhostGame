@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 16813046}
   - component: {fileID: 16813045}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: 2IdleNpc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_IsActive
@@ -801,7 +801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_IsActive
@@ -1274,7 +1274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_IsActive
@@ -4703,9 +4703,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -5078,7 +5078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_IsActive
@@ -7342,7 +7342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_IsActive
@@ -7621,7 +7621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_IsActive
@@ -7993,7 +7993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_IsActive
@@ -8796,7 +8796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_IsActive
@@ -11346,7 +11346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1635560969}
   - component: {fileID: 1635560968}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: 2IdleNpc (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14288,7 +14288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_IsActive
@@ -14461,7 +14461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4672525400679566726, guid: 0fe37bfa9d7bb457bacf22265aaaf569, type: 3}
       propertyPath: m_IsActive
@@ -15579,6 +15579,10 @@ PrefabInstance:
     - target: {fileID: 3803376504286271017, guid: 3ae076e1e07c6413ab1642ad85e44025, type: 3}
       propertyPath: m_Name
       value: IdleNpc
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803376504286271017, guid: 3ae076e1e07c6413ab1642ad85e44025, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

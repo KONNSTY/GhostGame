@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|d:\\freelance projects\\ghostgame\\ghostgamev6_0\\assets\\scripts\\gamesystem\\gamemode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesystem\\gamemode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameMode.cs",
+              "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\GameMode.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystem\\GameMode.cs",
+              "ToolTip": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\GameMode.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameSystem\\GameMode.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAAAIoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T07:18:28.742Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
