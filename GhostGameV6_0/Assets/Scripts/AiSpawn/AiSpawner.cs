@@ -9,6 +9,7 @@ public class AiSpawner : MonoBehaviour
 
     public bool canOnlySpawnOnce = false;
     private bool isFirstSpawn = true; // ✅ FIX: Track ob dies der erste Spawn ist
+    private bool hasSpawnedOnce = false; // ✅ Verhindert mehrfaches Spawnen pro Spawner
 
     private GameObject CircleWallInstance;
     public GameObject player;
@@ -66,7 +67,7 @@ public class AiSpawner : MonoBehaviour
             DistanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
 
             // ✅ Spawning Logic
-            if (DistanceToPlayer < MinDistance && isAllowingAiSpawn == true && canOnlySpawnOnce == false)
+            if (DistanceToPlayer < MinDistance && isAllowingAiSpawn == true && canOnlySpawnOnce == false && hasSpawnedOnce == false)
             {
                 canSpawnAi = true;
                 isAllowingAiSpawn = false;
@@ -246,6 +247,8 @@ public class AiSpawner : MonoBehaviour
         }
         
         canOnlySpawnOnce = true; // Verhindert mehrfaches Spawnen
+        hasSpawnedOnce = true; // ✅ Markiert Spawner als benutzt - spawnt nie wieder
+        Debug.Log("🚫 Spawner wurde verwendet - kann nicht mehr spawnen!");
     }
 
     // Neue Methode zum Zerstören gespawnter AIs
