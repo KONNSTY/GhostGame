@@ -66,6 +66,8 @@ public bool BossDefeated = false;
 
     [HideInInspector] public bool shouldAiSpawnerAllDeactivate;
 
+    public GameObject FirstCutSceneCanvasObj;
+
     public enum MissionType
     {
         Mission0, Mission1, Mission2, Mission3, Mission4, Mission5,
@@ -134,6 +136,7 @@ public bool BossDefeated = false;
             case MissionType.Mission0:
 
                 missionText.text = Mission0;
+                FirstCutSceneCanvasObj.SetActive(true);
                 weaponInLight.isUnableToUsWeapon = true;
                 if (NPCFollowObj[2].isSisterFollowing == true)
                     NPCFollowObj[2].isSisterFollowing = false;
