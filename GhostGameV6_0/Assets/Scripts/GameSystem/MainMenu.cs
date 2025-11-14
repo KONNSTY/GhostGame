@@ -226,5 +226,10 @@ public class MainMenu : MonoBehaviour
         SaveSystem.DeleteSaveFile();
         Debug.Log("🗑️ Savegame gelöscht!");
     }
+
+    public void OnSettingsClick()
+    {
+        AudioManager.Singleton.ShowSettings();
+    }
 }
 

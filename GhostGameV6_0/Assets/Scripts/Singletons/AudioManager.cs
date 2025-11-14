@@ -4,6 +4,11 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Singleton;
 
+    public AudioClip clip_background;
+    public AudioClip clip_fight;
+    
+
+    // Add more audioclips here
     [SerializeField]
     private AudioSource as_background;
     [SerializeField]
@@ -28,7 +33,7 @@ public class AudioManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        HideSettings();
     }
 
     // Update is called once per frame
@@ -81,5 +86,10 @@ public class AudioManager : MonoBehaviour
     public void ShowSettings()
     {
         go_SettingsHolder.SetActive(true);
+    }
+
+    public void HideSettings()
+    {
+        go_SettingsHolder.SetActive(false);
     }
 }
