@@ -181,9 +181,26 @@ public class AiSpawner : MonoBehaviour
             return;
         }
 
-        // ✅ FIX: Erstes Spawn = 1 Geist, nachfolgende = normale Anzahl
-        int spawnCount = isFirstSpawn ? 1 : gameMode.aiSpawners;
-        Debug.Log($"🎯 Spawne {spawnCount} Geister (Erstes Spawn: {isFirstSpawn})");
+        // ✅ FIX: Spawn Logic basierend auf Mission
+        // Mission 1-2: Erstes Spawn = 1, nachfolgende = gameMode.aiSpawners
+        // Mission 3+: Immer 3 Geister (gameMode.aiSpawners)
+        int spawnCount;
+        
+        // Check current mission through gameMode
+        bool isAfterMission2 = (gameMode.currentMIssion >= GameMode.MissionType.Mission3);
+        
+        if (isAfterMission2)
+        {
+            // Ab Mission 3: Immer die volle Anzahl spawnen
+            spawnCount = gameMode.aiSpawners;
+            Debug.Log($"🎯 Mission 3+: Spawne {spawnCount} Geister (Mission: {gameMode.currentMIssion})");
+        }
+        else
+        {
+            // Mission 1-2: Erste Spawn Logic
+            spawnCount = isFirstSpawn ? 1 : gameMode.aiSpawners;
+            Debug.Log($"🎯 Mission 1-2: Spawne {spawnCount} Geister (Erstes Spawn: {isFirstSpawn})");
+        }
         
         // Array für gespawnte AIs initialisieren
         spawnedAIs = new GameObject[spawnCount];
@@ -204,11 +221,28 @@ public class AiSpawner : MonoBehaviour
             spawnedAIs[i] = spawnedAI;
         }
 
-        // ✅ FIX: Nach dem ersten Spawn, erlaube mehr Geister
-        if (isFirstSpawn)
+        // ✅ FIX: Nach dem ersten Spawn, erlaube mehr Geister (nur für Mission 1-2)
+        if (isFirstSpawn && !isAfterMission2)
         {
             isFirstSpawn = false;
             Debug.Log("✅ Erstes Spawn abgeschlossen - nächste Spawns haben mehr Geister!");
+        }
+        
+        // ✅ FIX: Circle Wall spawnt IMMER wenn Geister spawnen
+        if (circleWallPrefab != null && CircleWallInstance == null)
+        {
+            CircleWallInstance = Instantiate(circleWallPrefab,
+                                           player.transform.position,
+                                           quaternion.identity);
+            Debug.Log($"🛡️ Circle Wall gespawnt an Position: {player.transform.position}");
+        }
+        else if (circleWallPrefab == null)
+        {
+            Debug.LogError("❌ Kann Circle Wall nicht spawnen - Prefab ist null!");
+        }
+        else if (CircleWallInstance != null)
+        {
+            Debug.LogWarning("⚠️ Circle Wall bereits vorhanden!");
         }
         
         canOnlySpawnOnce = true; // Verhindert mehrfaches Spawnen
