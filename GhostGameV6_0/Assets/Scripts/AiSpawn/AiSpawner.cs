@@ -90,6 +90,7 @@ public class AiSpawner : MonoBehaviour
 
                 Destroy(CircleWallInstance);
                 CircleWallInstance = null;
+                player.GetComponent<PlayerController>().health = 100;
                 WeaponInLight.killCount = 0;
                 isAllowingAiSpawn = true; // Erlaube neues Spawning
             }

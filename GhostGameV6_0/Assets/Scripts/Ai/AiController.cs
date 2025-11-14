@@ -10,6 +10,8 @@ public class AiController : MonoBehaviour
     [HideInInspector] public Vector3 playertarget;
     [HideInInspector] public bool isDead = false;
 
+    public bool isCollideWithPlayer = false;
+
     public GameObject player;
     public PlayerController pcontroller;
     private bool shouldDestoryGameObject = false;
@@ -277,7 +279,7 @@ public class AiController : MonoBehaviour
                 if (!shouldDestoryGameObject)
                 {
                     shouldDestoryGameObject = true;
-                    Instantiate(InterEnegeryCrystal, transform.position, Quaternion.identity);
+                 
                     Destroy(gameObject, 2f);
                 }
                 break;
@@ -285,8 +287,10 @@ public class AiController : MonoBehaviour
             case AiState.AttackPlayer:
                 navMeshAgent.isStopped = true;
                 
-                if (Time.time >= lastDamageTime + damageCooldown)
+                if(isCollideWithPlayer == true)
                 {
+                if (Time.time >= lastDamageTime + damageCooldown)
+                
                     if (pcontroller != null)
                     {
                         pcontroller.health -= damageToPlayer;
@@ -294,6 +298,7 @@ public class AiController : MonoBehaviour
                         Debug.Log($"💥 AI Angriff! Player Health: {pcontroller.health}");
                     }
                 }
+        
                 
                 // ✅ FIX: Coroutine nur einmal starten
                 if (!isAfterAttackRunning)
@@ -413,6 +418,8 @@ public class AiController : MonoBehaviour
     {
         if (isDead) return;
 
+        isCollideWithPlayer = true;
+
         if (other.gameObject.name == "Player")
         {
             state = AiState.AttackPlayer;
@@ -426,6 +433,8 @@ public class AiController : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
+isCollideWithPlayer = false;
+
         if (other.CompareTag("Player"))
         {
             isAttacking = false;

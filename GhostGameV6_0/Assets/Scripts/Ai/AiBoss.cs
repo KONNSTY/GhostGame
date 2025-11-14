@@ -18,7 +18,7 @@ public class AiBoss : MonoBehaviour
     public GameObject Ghost;
     public Animator GhostAnimator;
 
-    public float damageToPlayer = 5f;
+    public float damageToPlayer = 15f; // ✅ BOSS: 3x mehr Schaden als normale AI
 
     public GameObject ShockEffect;
 
@@ -36,7 +36,7 @@ public class AiBoss : MonoBehaviour
 
     [HideInInspector] public bool doJustOneTime = true;
 
-    public float health = 100;
+    public float health = 300f; // ✅ BOSS: 3x mehr Health als normale AI
 
     [HideInInspector] public float distancetoTheplayer;
 
@@ -49,7 +49,7 @@ public class AiBoss : MonoBehaviour
 
     [HideInInspector] public bool shouldGoback = false;
 
-    public float speed = 7f;
+    public float speed = 9f; // ✅ BOSS: Schneller als normale AI (war 4f)
 
     private bool cantDieAgain;
 
@@ -69,9 +69,9 @@ public class AiBoss : MonoBehaviour
 
     public WeaponInLight weaponInLight;
 
-    // ✅ FIX: Damage Cooldown hinzufügen
-    private float lastDamageTime = 2f;
-    private float damageCooldown = 1f;
+    // ✅ BOSS: Schnellerer Angriff als normale AI
+    private float lastDamageTime = 0f;
+    private float damageCooldown = 0.5f; // ✅ BOSS: 2x schnellerer Angriff als normale AI (war 1f)
 
     // ✅ FIX: Coroutine-Control Flags
     private bool isDelayRunning = false;
@@ -84,7 +84,7 @@ public class AiBoss : MonoBehaviour
     {
         PlayerZeroPos = transform;
         isAttacking = false;
-        health = 100;
+        health = 300f; // ✅ BOSS: 3x mehr Health
 
         navMeshAgent = GetComponent<NavMeshAgent>();
         EnemyCanvas = GetComponentInChildren<Canvas>();
@@ -139,7 +139,7 @@ public class AiBoss : MonoBehaviour
 
         if (healthBar != null)
         {
-            healthBar.fillAmount = health / 100f;
+            healthBar.fillAmount = health / 300f; // ✅ BOSS: Health Bar für 300 HP
         }
 
         if (navMeshAgent != null)
@@ -147,7 +147,7 @@ public class AiBoss : MonoBehaviour
             navMeshAgent.speed = speed;
         }
 
-        if (health <= 10 && cantDieAgain == false)
+        if (health <= 30 && cantDieAgain == false) // ✅ BOSS: Stirbt bei 30 HP (10% von 300)
         {
             Die(); // ✅ FIX: Verwende Die() Methode
             return;
@@ -204,45 +204,26 @@ public class AiBoss : MonoBehaviour
 
                 if (navMeshAgent.isStopped == false && player != null)
                 {
-                    if (shouldThePlayerBeAtacked == false)
-                    {
-                        navMeshAgent.stoppingDistance = 3f;
-                        navMeshAgent.SetDestination(player.transform.position);
-                        
-                        // ✅ FIX: Coroutine nur einmal starten
-                        if (!isDelayRunning)
-                        {
-                            StartCoroutine(DelayForNextMove(1.5f));
-                            isDelayRunning = true;
-                        }
-                    }
-                    else
-                    {
-                        navMeshAgent.isStopped = false;
-                        navMeshAgent.stoppingDistance = 0.5f;
-                        navMeshAgent.SetDestination(player.transform.position);
-
-                        if (navMeshAgent.remainingDistance < 0.5f)
-                        {
-                            state = AiState.GoBack;
-                        }
-                    }
+                    // ✅ BOSS: Gehe direkt zum Spieler ohne Verzögerung oder Zurücklaufen
+                    navMeshAgent.stoppingDistance = 1.5f; // Näher an den Spieler
+                    navMeshAgent.SetDestination(player.transform.position);
+                    
+                    // ✅ BOSS: Kein automatisches GoBack beim Erreichen des Spielers
+                    // Der Boss bleibt beim Spieler und wartet auf Trigger-Kontakt
                 }
-                if (navMeshAgent.isStopped == true)
-                {
-                    state = AiState.GoBack;
-                    break;
-                }
+                
+                // ✅ BOSS: Entferne automatisches GoBack bei isStopped
+                // Boss soll nur zurücklaufen nach Angriff oder bei Light-Flucht
                 break;
 
             case AiState.GoBack:
                 shouldThePlayerBeAtacked = false;
-                navMeshAgent.speed = 6f;
+                navMeshAgent.speed = 10f; // ✅ BOSS: Schnelleres GoBack als normale AI (war 6f)
                 navMeshAgent.isStopped = false;
                 
                 if (shouldGoback == false)
                 {
-                    speed = 2f;
+                    speed = 4f; // ✅ BOSS: Schneller als normale AI (war 2f)
                     Vector3 dir = transform.position - playertarget;
                     dir.y = 0f;
                     dir = dir.normalized;
@@ -256,10 +237,10 @@ public class AiBoss : MonoBehaviour
                 
                 AiShouldEscape = false;
                 
-                // ✅ FIX: Coroutine nur einmal starten
+                // ✅ BOSS: Schnellere Wartezeit als normale AI
                 if (!isWaitRunning)
                 {
-                    StartCoroutine(WaitTilNextAttack(0.5f));
+                    StartCoroutine(WaitTilNextAttack(0.3f)); // ✅ BOSS: Viel schneller als normale AI (war 0.5f)
                     isWaitRunning = true;
                 }
                 break;
@@ -300,14 +281,14 @@ public class AiBoss : MonoBehaviour
                     {
                         pcontroller.health -= damageToPlayer;
                         lastDamageTime = Time.time;
-                        Debug.Log($"💥 AI Angriff! Player Health: {pcontroller.health}");
+                        Debug.Log($"💥 BOSS Angriff! Player Health: {pcontroller.health}"); // ✅ BOSS: Spezielle Debug-Nachricht
                     }
                 }
                 
-                // ✅ FIX: Coroutine nur einmal starten
+                // ✅ BOSS: Kürzere Attack-Animation
                 if (!isAfterAttackRunning)
                 {
-                    StartCoroutine(AfterAttack(0.7f));
+                    StartCoroutine(AfterAttack(0.4f)); // ✅ BOSS: Schnellere Animation (war 0.7f)
                     isAfterAttackRunning = true;
                 }
                 break;
@@ -326,7 +307,7 @@ public class AiBoss : MonoBehaviour
         }
     }
 
-    // ✅ FIX: Die() Methode korrigiert
+    // ✅ BOSS: Erweiterte Die() Methode mit Boss-Features
     void Die()
     {
         cantDieAgain = true;
@@ -338,14 +319,24 @@ public class AiBoss : MonoBehaviour
             aiCollider.enabled = false;
         }
         
+        // ✅ BOSS: Mehrere Kristalle droppen (3-5 Stück)
         if (InterEnegeryCrystal != null && player != null)
         {
-            Instantiate(InterEnegeryCrystal, transform.position, Quaternion.identity);
+            int crystalCount = UnityEngine.Random.Range(3, 6); // 3-5 Kristalle
+            for (int i = 0; i < crystalCount; i++)
+            {
+                Vector3 crystalPos = transform.position + UnityEngine.Random.insideUnitSphere * 2f;
+                crystalPos.y = transform.position.y + 1f; // Leicht erhöht spawnen
+                Instantiate(InterEnegeryCrystal, crystalPos, Quaternion.identity);
+            }
+            Debug.Log($"💎 Boss droppt {crystalCount} Kristalle!");
         }
         
+        // ✅ BOSS: Mehr Kill Count (3 statt 1)
         if (weaponInLight != null)
         {
-            weaponInLight.killCount++;
+            weaponInLight.killCount += 3; // Boss zählt als 3 Kills
+            Debug.Log($"🏆 Boss besiegt! Kill Count: +3");
         }
         
         shouldDestoryGameObject = true;
@@ -426,6 +417,7 @@ public class AiBoss : MonoBehaviour
         {
             state = AiState.AttackPlayer;
             isAttacking = true;
+            // ✅ BOSS: Gleicher Trigger wie normale AI, aber stärker!
         }
         else if (other.name.Contains("Spot Light"))
         {
@@ -438,8 +430,9 @@ public class AiBoss : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isAttacking = false;
-            state = AiState.GoBack;
-            Debug.Log("🚪 Player verlässt Trigger");
+            // ✅ BOSS: Gehe direkt wieder zum Spieler statt zurückzulaufen
+            state = AiState.MoveToPlayer; 
+            Debug.Log("🚪 Boss: Player verlässt Trigger - verfolge weiter!"); 
         }
 
         if (navMeshAgent != null && !isDead)
