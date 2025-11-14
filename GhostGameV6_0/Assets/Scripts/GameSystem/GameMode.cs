@@ -148,7 +148,7 @@ public bool BossDefeated = false;
 
             case MissionType.Mission1:
                 missionText.text = Mission1;
-                aiSpawners = 1;
+                aiSpawners = 1; // ✅ FIX: Nur 1 Geist für Anfänger-Mission
                 // ✅ KORRIGIERT: Besserer Null-Check
                 NPCFollowObj[0].isSebastianFollowing = true;
          GoalArray[1].SetActive(true);
@@ -161,7 +161,7 @@ public bool BossDefeated = false;
 
             case MissionType.Mission2:
                 missionText.text = Mission2;
-                  aiSpawners = 1;
+                  aiSpawners = 1; // ✅ FIX: Nur 1 Geist für Anfänger-Mission
                 // ✅ HINZUGEFÜGT: Sebastian stoppt zu folgen
                 GoalArray[2].SetActive(true);
                 NPCFollowObj[0].isSebastianFollowing = false;
@@ -269,7 +269,7 @@ public bool BossDefeated = false;
 
             case MissionType.Mission8:
                 missionText.text = Mission8;
-   aiSpawners = 3;
+                aiSpawners = 1; // ✅ BOSS: Nur 1 Boss spawnen
                 weaponInLight.isUnableToUsWeapon = false;
 
 
@@ -296,17 +296,7 @@ public bool BossDefeated = false;
                     isMissionNotLoadAndNight = true;
                 }
 
-              
-
-                aiSpawners = 9;
-
-
-
-             
-
-
-
-
+                // ✅ BOSS: Nur 1 Boss pro Spawn (aiSpawners bereits auf 1 gesetzt)
 
                 break;
 

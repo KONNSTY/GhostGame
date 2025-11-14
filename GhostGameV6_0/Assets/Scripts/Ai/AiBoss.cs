@@ -49,7 +49,7 @@ public class AiBoss : MonoBehaviour
 
     [HideInInspector] public bool shouldGoback = false;
 
-    public float speed = 9f; // ✅ BOSS: Schneller als normale AI (war 4f)
+    public float speed = 12f; // ✅ BOSS: Noch schneller als normale AI (war 9f)
 
     private bool cantDieAgain;
 
@@ -218,12 +218,12 @@ public class AiBoss : MonoBehaviour
 
             case AiState.GoBack:
                 shouldThePlayerBeAtacked = false;
-                navMeshAgent.speed = 10f; // ✅ BOSS: Schnelleres GoBack als normale AI (war 6f)
+                navMeshAgent.speed = 15f; // ✅ BOSS: Sehr schnelle Flucht (war 10f)
                 navMeshAgent.isStopped = false;
                 
                 if (shouldGoback == false)
                 {
-                    speed = 4f; // ✅ BOSS: Schneller als normale AI (war 2f)
+                    speed = 6f; // ✅ BOSS: Schnellere Recovery (war 4f)
                     Vector3 dir = transform.position - playertarget;
                     dir.y = 0f;
                     dir = dir.normalized;
@@ -419,7 +419,7 @@ public class AiBoss : MonoBehaviour
             isAttacking = true;
             // ✅ BOSS: Gleicher Trigger wie normale AI, aber stärker!
         }
-        else if (other.name.Contains("Spot Light"))
+        else if (other.CompareTag("weapon")) // ✅ FIX: Verwende weapon Tag statt Spot Light name
         {
             AiShouldEscape = true;
         }

@@ -50,7 +50,7 @@ public class AiController : MonoBehaviour
 
     [HideInInspector] public bool shouldGoback = false;
 
-    public float speed = 4f;
+    public float speed = 8f;
 
     private bool cantDieAgain;
 
@@ -95,8 +95,31 @@ public class AiController : MonoBehaviour
 
         if (player == null)
         {
-            player = GameObject.FindAnyObjectByType<PlayerController>().gameObject;
-            //player = GameObject.FindGameObjectWithTag("Player");
+            // ✅ FIX: Mehrere Methoden versuchen um Player zu finden
+            player = GameObject.FindAnyObjectByType<PlayerController>()?.gameObject;
+            
+            if (player == null)
+            {
+                player = GameObject.FindGameObjectWithTag("Player");
+            }
+            
+            if (player == null)
+            {
+                GameObject[] allPlayers = GameObject.FindGameObjectsWithTag("Player");
+                if (allPlayers.Length > 0)
+                {
+                    player = allPlayers[0];
+                    Debug.Log($"🎯 AI gefunden Player über Tag-Array: {player.name}");
+                }
+                else
+                {
+                    Debug.LogError($"❌ AI {gameObject.name} kann Player nicht finden! Überprüfe Player Tag.");
+                }
+            }
+            else
+            {
+                Debug.Log($"🎯 AI gefunden Player über Tag: {player.name}");
+            }
         }
 
         if (player != null)
@@ -117,6 +140,23 @@ public class AiController : MonoBehaviour
         }
 
         aiCollider = GetComponent<Collider>();
+        
+        // ✅ FIX: Debug-Check für Collider Setup
+        if (aiCollider != null)
+        {
+            if (!aiCollider.isTrigger)
+            {
+                Debug.LogWarning($"⚠️ AI {gameObject.name}: Collider ist kein Trigger! Player-Erkennung funktioniert nicht.");
+            }
+            else
+            {
+                Debug.Log($"✅ AI {gameObject.name}: Collider korrekt als Trigger konfiguriert.");
+            }
+        }
+        else
+        {
+            Debug.LogError($"❌ AI {gameObject.name}: Kein Collider gefunden!");
+        }
 
         state = AiState.MoveToPlayer;
         cantDieAgain = false;
@@ -231,12 +271,12 @@ public class AiController : MonoBehaviour
 
             case AiState.GoBack:
                 shouldThePlayerBeAtacked = false;
-                navMeshAgent.speed = 6f;
+                navMeshAgent.speed = 10f;
                 navMeshAgent.isStopped = false;
                 
                 if (shouldGoback == false)
                 {
-                    speed = 2f;
+                    speed = 8f;
                     Vector3 dir = transform.position - playertarget;
                     dir.y = 0f;
                     dir = dir.normalized;
@@ -420,14 +460,16 @@ public class AiController : MonoBehaviour
 
         isCollideWithPlayer = true;
 
-        if (other.gameObject.name == "Player")
+        if (other.CompareTag("player")) // ✅ FIX: Konsistente Tag-Überprüfung
         {
             state = AiState.AttackPlayer;
             isAttacking = true;
+            Debug.Log($"🎯 AI {gameObject.name} erkannt Spieler: {other.name}");
         }
-        else if (other.name.Contains("Spot Light"))
+        else if (other.CompareTag("weapon")) // ✅ FIX: Verwende Weapon Tag statt Spot Light name
         {
             AiShouldEscape = true;
+            Debug.Log($"💡 AI {gameObject.name} flüchtet vor Licht!");
         }
     }
 
@@ -435,11 +477,11 @@ public class AiController : MonoBehaviour
     {
 isCollideWithPlayer = false;
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player"))
         {
             isAttacking = false;
             state = AiState.GoBack;
-            Debug.Log("🚪 Player verlässt Trigger");
+            Debug.Log($"🚪 AI {gameObject.name}: Player {other.name} verlässt Trigger");
         }
 
         if (navMeshAgent != null && !isDead)

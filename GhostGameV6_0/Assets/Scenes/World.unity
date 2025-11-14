@@ -2110,7 +2110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2553437021711645664, guid: 56d16f9622aad4afcaa1920cb5a3a4c7, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: weapon
       objectReference: {fileID: 0}
     - target: {fileID: 2765969727436250434, guid: 56d16f9622aad4afcaa1920cb5a3a4c7, type: 3}
       propertyPath: m_Name
@@ -5637,6 +5637,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4190424223823332269, guid: 2213d85e60cde483eaf5c8f4f6fcbd1b, type: 3}
+      propertyPath: m_TagString
+      value: player
+      objectReference: {fileID: 0}
     - target: {fileID: 4207442118038812627, guid: 2213d85e60cde483eaf5c8f4f6fcbd1b, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -6280,7 +6284,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4190424223823332269, guid: 2213d85e60cde483eaf5c8f4f6fcbd1b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1883602871}
   m_SourcePrefab: {fileID: 100100000, guid: 2213d85e60cde483eaf5c8f4f6fcbd1b, type: 3}
 --- !u!1001 &782988028
 PrefabInstance:
@@ -13427,6 +13434,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6539324094963797997, guid: 2213d85e60cde483eaf5c8f4f6fcbd1b, type: 3}
   m_PrefabInstance: {fileID: 776232676}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &1883602871
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406597936}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.09
+  m_Height: 1.16
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.29, z: 0}
 --- !u!1 &1886171911
 GameObject:
   m_ObjectHideFlags: 0

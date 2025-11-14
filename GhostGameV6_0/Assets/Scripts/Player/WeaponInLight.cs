@@ -12,6 +12,8 @@ public class WeaponInLight : MonoBehaviour
     public int killCount = 0;
 
     public GameObject player;
+
+  
     public PlayerController pcontroller;
 
     public bool canReload = false; // Flag to control reloading
@@ -40,13 +42,16 @@ public class WeaponInLight : MonoBehaviour
         lightIntensity = spotLight.intensity; // Store the initial intensity
         canAiBeDamaged = false;
         FXLight.SetActive(false);
+    
+
+       
 
 
     }
 
     void Update()
     {
-
+   
 
         if (pcontroller.energy == 100)
         {
@@ -154,6 +159,7 @@ Mouse
                 {
                     spotLight.intensity = 300f;
                     FXLight.SetActive(true);
+                    
 
                     pcontroller.energy -= 30f * Time.deltaTime; // Reduce energy while the light is on
 
@@ -182,6 +188,7 @@ Mouse
             {
                 spotLight.intensity = lightIntensity;
                 FXLight.SetActive(false);
+             
 
                 canAiBeDamaged = false;
                 keyUP = true; // Set keyUP to true when the mouse button is released

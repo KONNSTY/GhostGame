@@ -8,6 +8,7 @@ public class AiSpawner : MonoBehaviour
     public GameMode gameMode;
 
     public bool canOnlySpawnOnce = false;
+    private bool isFirstSpawn = true; // ✅ FIX: Track ob dies der erste Spawn ist
 
     private GameObject CircleWallInstance;
     public GameObject player;
@@ -39,6 +40,16 @@ public class AiSpawner : MonoBehaviour
         gameMode = gameModeObj.GetComponent<GameMode>();
         aiPrefab = Resources.Load<GameObject>("Ghosts");
         circleWallPrefab = Resources.Load<GameObject>("CircleWall Variant");
+        
+        // ✅ FIX: Debug-Check für CircleWall Prefab
+        if (circleWallPrefab == null)
+        {
+            Debug.LogError("❌ CircleWall Prefab nicht gefunden! Überprüfe Resources/CircleWall Variant");
+        }
+        else
+        {
+            Debug.Log($"✅ CircleWall Prefab geladen: {circleWallPrefab.name}");
+        }
         WeaponInLight = player.GetComponentInChildren<WeaponInLight>();
         MaxDistance = 10f;
         MinDistance = 5f; // ✅ FIX: MinDistance war nicht initialisiert
@@ -69,21 +80,16 @@ public class AiSpawner : MonoBehaviour
             {
                 canSpawnAi = true;
                 isAllowingAiSpawn = false;
-        
-                if (circleWallPrefab != null)
-                {
-                    CircleWallInstance = Instantiate(circleWallPrefab,
-                                                   player.transform.position,
-                                                   quaternion.identity);
-                }
+                Debug.Log($"🎯 Spawn-Trigger aktiviert! Distanz: {DistanceToPlayer:F2} < {MinDistance}");
             }
             else
             {
                 canSpawnAi = false;
             }
 
-            // ✅ KORRIGIERT: Kill Count Check mit Aktion
-            if (WeaponInLight != null && WeaponInLight.killCount >= gameMode.aiSpawners && CircleWallInstance != null)
+            // ✅ KORRIGIERT: Kill Count Check mit Aktion - basiert auf tatsächlich gespawnten AIs
+            int requiredKills = (spawnedAIs != null) ? spawnedAIs.Length : gameMode.aiSpawners;
+            if (WeaponInLight != null && WeaponInLight.killCount >= requiredKills && CircleWallInstance != null)
             {
                 Debug.Log($"🎯 Kill Count erreicht: {WeaponInLight.killCount}");
                 Debug.Log("✅ Zerstöre CircleWall...");
@@ -93,6 +99,7 @@ public class AiSpawner : MonoBehaviour
                 player.GetComponent<PlayerController>().health = 100;
                 WeaponInLight.killCount = 0;
                 isAllowingAiSpawn = true; // Erlaube neues Spawning
+                canOnlySpawnOnce = false; // ✅ FIX: Erlaube neues Spawning für nächste Runde
             }
 
             // ✅ AI Distance Management (nur wenn spawnedAIs existiert)
@@ -158,6 +165,8 @@ public class AiSpawner : MonoBehaviour
         
     
         isAllowingAiSpawn = true;
+        canOnlySpawnOnce = false; // ✅ FIX: Erlaube neues Spawning
+        // Hinweis: isFirstSpawn wird NICHT zurückgesetzt - nur beim echten Level-Reset
     }
 
     public void SpawnAi()
@@ -176,15 +185,19 @@ public class AiSpawner : MonoBehaviour
             return;
         }
 
+        // ✅ FIX: Erstes Spawn = 1 Geist, nachfolgende = normale Anzahl
+        int spawnCount = isFirstSpawn ? 1 : gameMode.aiSpawners;
+        Debug.Log($"🎯 Spawne {spawnCount} Geister (Erstes Spawn: {isFirstSpawn})");
+        
         // Array für gespawnte AIs initialisieren
-        spawnedAIs = new GameObject[gameMode.aiSpawners];
+        spawnedAIs = new GameObject[spawnCount];
 
-        if (spawnedAIs.Length > 7)
+        if (spawnCount > 7) // ✅ FIX: Basiert auf tatsächlicher Spawn-Anzahl
         {
             bFinalStarts = true;
         }
 
-        for (int i = 0; i < gameMode.aiSpawners; i++)
+        for (int i = 0; i < spawnCount; i++)
         {
             Vector3 SpherePos = UnityEngine.Random.insideUnitSphere * 20f;
             SpherePos.y = 0f;
@@ -195,6 +208,30 @@ public class AiSpawner : MonoBehaviour
             spawnedAIs[i] = spawnedAI;
         }
 
+        // ✅ FIX: Nach dem ersten Spawn, erlaube mehr Geister
+        if (isFirstSpawn)
+        {
+            isFirstSpawn = false;
+            Debug.Log("✅ Erstes Spawn abgeschlossen - nächste Spawns haben mehr Geister!");
+        }
+        
+        // ✅ FIX: Circle Wall NACH AI-Spawn erstellen
+        if (circleWallPrefab != null && CircleWallInstance == null)
+        {
+            CircleWallInstance = Instantiate(circleWallPrefab,
+                                           player.transform.position,
+                                           quaternion.identity);
+            Debug.Log($"🛑 Circle Wall gespawnt an Position: {player.transform.position}");
+        }
+        else if (circleWallPrefab == null)
+        {
+            Debug.LogError("❌ Kann Circle Wall nicht spawnen - Prefab ist null!");
+        }
+        else if (CircleWallInstance != null)
+        {
+            Debug.LogWarning("⚠️ Circle Wall bereits vorhanden!");
+        }
+        
         canOnlySpawnOnce = true; // Verhindert mehrfaches Spawnen
     }
 
