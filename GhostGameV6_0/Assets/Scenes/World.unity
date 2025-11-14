@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0.67
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 24173a3c97e09b64eab4f7b2e683a341, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 94caf2ba4ca5e46bfaba53afcc8778dd, type: 2}
   m_HaloStrength: 0.218
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -94,7 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 22ef63684cccf564ab931c177f255b19, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 2488b4d6119d9a448914f635793937df, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: d7eb1be94c7e0db4685adaaa96cdcb94, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4659,6 +4659,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9361b244a7da54d6d935db5c49fb9472, type: 3}
+--- !u!1 &704062860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6013632388104371084, guid: 6e0965b76baec374d9a8e0c82f9033cb, type: 3}
+  m_PrefabInstance: {fileID: 1214371819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &704062866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704062860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdb2f526c487042be8de96a56bbe1690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaterCollider
+  playerController: {fileID: 1453168432}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4689,8 +4707,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.6603774, g: 0.4645706, b: 0.13394447, a: 1}
-  m_Intensity: 5
+  m_Color: {r: 0.2924528, g: 0.20031492, b: 0.04552332, a: 1}
+  m_Intensity: 2.4
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -8879,7 +8897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6013632388104371080, guid: 6e0965b76baec374d9a8e0c82f9033cb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.3
+      value: 8.7
       objectReference: {fileID: 0}
     - target: {fileID: 6013632388104371080, guid: 6e0965b76baec374d9a8e0c82f9033cb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8928,7 +8946,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6013632388104371084, guid: 6e0965b76baec374d9a8e0c82f9033cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 704062866}
   m_SourcePrefab: {fileID: 100100000, guid: 6e0965b76baec374d9a8e0c82f9033cb, type: 3}
 --- !u!4 &1217162433 stripped
 Transform:
