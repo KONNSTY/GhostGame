@@ -174,6 +174,12 @@ public bool BossDefeated = false;
                 if (playerInventory.inventoryListKey.Contains("Key1" + 1))
                     playerInventory.RemoveKey("Key1", 1);
               
+                // ✅ FIX: Aktiviere Portale in Mission 2
+                for (int i = 0; i < Portals.Length; i++)
+                {
+                    if (Portals[i] != null)
+                        Portals[i].SetActive(true);
+                }
        
                 isMissionNotLoadAndNight = true;
 

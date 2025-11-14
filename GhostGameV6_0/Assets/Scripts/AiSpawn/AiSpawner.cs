@@ -40,16 +40,6 @@ public class AiSpawner : MonoBehaviour
         gameMode = gameModeObj.GetComponent<GameMode>();
         aiPrefab = Resources.Load<GameObject>("Ghosts");
         circleWallPrefab = Resources.Load<GameObject>("CircleWall Variant");
-        
-        // ✅ FIX: Debug-Check für CircleWall Prefab
-        if (circleWallPrefab == null)
-        {
-            Debug.LogError("❌ CircleWall Prefab nicht gefunden! Überprüfe Resources/CircleWall Variant");
-        }
-        else
-        {
-            Debug.Log($"✅ CircleWall Prefab geladen: {circleWallPrefab.name}");
-        }
         WeaponInLight = player.GetComponentInChildren<WeaponInLight>();
         MaxDistance = 10f;
         MinDistance = 5f; // ✅ FIX: MinDistance war nicht initialisiert
@@ -80,7 +70,13 @@ public class AiSpawner : MonoBehaviour
             {
                 canSpawnAi = true;
                 isAllowingAiSpawn = false;
-                Debug.Log($"🎯 Spawn-Trigger aktiviert! Distanz: {DistanceToPlayer:F2} < {MinDistance}");
+        
+                if (circleWallPrefab != null)
+                {
+                    CircleWallInstance = Instantiate(circleWallPrefab,
+                                                   player.transform.position,
+                                                   quaternion.identity);
+                }
             }
             else
             {
@@ -213,23 +209,6 @@ public class AiSpawner : MonoBehaviour
         {
             isFirstSpawn = false;
             Debug.Log("✅ Erstes Spawn abgeschlossen - nächste Spawns haben mehr Geister!");
-        }
-        
-        // ✅ FIX: Circle Wall NACH AI-Spawn erstellen
-        if (circleWallPrefab != null && CircleWallInstance == null)
-        {
-            CircleWallInstance = Instantiate(circleWallPrefab,
-                                           player.transform.position,
-                                           quaternion.identity);
-            Debug.Log($"🛑 Circle Wall gespawnt an Position: {player.transform.position}");
-        }
-        else if (circleWallPrefab == null)
-        {
-            Debug.LogError("❌ Kann Circle Wall nicht spawnen - Prefab ist null!");
-        }
-        else if (CircleWallInstance != null)
-        {
-            Debug.LogWarning("⚠️ Circle Wall bereits vorhanden!");
         }
         
         canOnlySpawnOnce = true; // Verhindert mehrfaches Spawnen
