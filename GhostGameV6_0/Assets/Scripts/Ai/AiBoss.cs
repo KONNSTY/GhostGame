@@ -18,7 +18,7 @@ public class AiBoss : MonoBehaviour
     public GameObject Ghost;
     public Animator GhostAnimator;
 
-    public float damageToPlayer = 15f; // ✅ BOSS: 3x mehr Schaden als normale AI
+    public float damageToPlayer = 5f; // ✅ BOSS: 5x mehr Schaden als normale AI (war 15f)
 
     public GameObject ShockEffect;
 
@@ -71,12 +71,14 @@ public class AiBoss : MonoBehaviour
 
     // ✅ BOSS: Schnellerer Angriff als normale AI
     private float lastDamageTime = 0f;
-    private float damageCooldown = 0.5f; // ✅ BOSS: 2x schnellerer Angriff als normale AI (war 1f)
+    private float damageCooldown = 1f; // ✅ BOSS: 2x schnellerer Angriff als normale AI (war 0.5f)
 
     // ✅ FIX: Coroutine-Control Flags
     private bool isDelayRunning = false;
     private bool isWaitRunning = false;
     private bool isAfterAttackRunning = false;
+    
+    public bool isCollideWithPlayer = false; // ✅ FIX: Track collision with player
 
     public GameMode gameMode;
 
@@ -275,13 +277,16 @@ public class AiBoss : MonoBehaviour
             case AiState.AttackPlayer:
                 navMeshAgent.isStopped = true;
                 
-                if (Time.time >= lastDamageTime + damageCooldown)
+                if (isCollideWithPlayer == true) // ✅ FIX: Nur Schaden wenn im Trigger
                 {
-                    if (pcontroller != null)
+                    if (Time.time >= lastDamageTime + damageCooldown)
                     {
-                        pcontroller.health -= damageToPlayer;
-                        lastDamageTime = Time.time;
-                        Debug.Log($"💥 BOSS Angriff! Player Health: {pcontroller.health}"); // ✅ BOSS: Spezielle Debug-Nachricht
+                        if (pcontroller != null)
+                        {
+                            pcontroller.health -= damageToPlayer;
+                            lastDamageTime = Time.time;
+                            Debug.Log($"💥 BOSS Angriff! Player Health: {pcontroller.health}");
+                        }
                     }
                 }
                 
@@ -413,20 +418,25 @@ public class AiBoss : MonoBehaviour
     {
         if (isDead) return;
 
-        if (other.gameObject.name == "Player")
+        isCollideWithPlayer = true; // ✅ FIX: Set collision flag
+
+        if (other.CompareTag("player")) // ✅ FIX: Use lowercase player tag
         {
             state = AiState.AttackPlayer;
             isAttacking = true;
-            // ✅ BOSS: Gleicher Trigger wie normale AI, aber stärker!
+            Debug.Log($"🎯 BOSS {gameObject.name} erkannt Spieler: {other.name}");
         }
         else if (other.CompareTag("weapon")) // ✅ FIX: Verwende weapon Tag statt Spot Light name
         {
             AiShouldEscape = true;
+            Debug.Log($"💡 BOSS {gameObject.name} flüchtet vor Licht!");
         }
     }
 
     void OnTriggerExit(Collider other)
     {
+        isCollideWithPlayer = false; // ✅ FIX: Clear collision flag
+        
         if (other.CompareTag("Player"))
         {
             isAttacking = false;

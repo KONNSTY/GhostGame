@@ -151,6 +151,7 @@ public bool BossDefeated = false;
 
             case MissionType.Mission1:
                 missionText.text = Mission1;
+                FirstCutSceneCanvasObj.SetActive(false);
                 aiSpawners = 1; // ✅ FIX: Nur 1 Geist für Anfänger-Mission
                 // ✅ KORRIGIERT: Besserer Null-Check
                 NPCFollowObj[0].isSebastianFollowing = true;
@@ -164,6 +165,7 @@ public bool BossDefeated = false;
 
             case MissionType.Mission2:
                 missionText.text = Mission2;
+                FirstCutSceneCanvasObj.SetActive(false);
                   aiSpawners = 1; // ✅ FIX: Nur 1 Geist für Anfänger-Mission
                 // ✅ HINZUGEFÜGT: Sebastian stoppt zu folgen
                 GoalArray[2].SetActive(true);
@@ -191,6 +193,7 @@ public bool BossDefeated = false;
 
             case MissionType.Mission3:
                 missionText.text = Mission3;
+                FirstCutSceneCanvasObj.SetActive(false);
 
             aiSpawners = 3;
 
@@ -211,6 +214,7 @@ public bool BossDefeated = false;
 
             case MissionType.Mission4:
                 missionText.text = Mission4;
+                FirstCutSceneCanvasObj.SetActive(false);
                 GoalArray[4].SetActive(true);
            aiSpawners = 3;
                 weaponInLight.isUnableToUsWeapon = false;
@@ -230,6 +234,7 @@ public bool BossDefeated = false;
 
             case MissionType.Mission5:
                 missionText.text = Mission5;
+                FirstCutSceneCanvasObj.SetActive(false);
    aiSpawners = 3;
                 GoalArray[5].SetActive(true);
                 weaponInLight.isUnableToUsWeapon = false;
@@ -247,6 +252,7 @@ public bool BossDefeated = false;
 
             case MissionType.Mission6:
                 missionText.text = Mission6;
+                FirstCutSceneCanvasObj.SetActive(false);
                 GoalArray[6].SetActive(true);
                 weaponInLight.isUnableToUsWeapon = false;
    aiSpawners = 3;
@@ -262,6 +268,7 @@ public bool BossDefeated = false;
 
             case MissionType.Mission7:
                 missionText.text = Mission7;
+                FirstCutSceneCanvasObj.SetActive(false);
 
                 GoalArray[7].SetActive(true);
                 weaponInLight.isUnableToUsWeapon = false;
@@ -278,6 +285,7 @@ public bool BossDefeated = false;
 
             case MissionType.Mission8:
                 missionText.text = Mission8;
+                FirstCutSceneCanvasObj.SetActive(false);
                 aiSpawners = 1; // ✅ BOSS: Nur 1 Boss spawnen
                 weaponInLight.isUnableToUsWeapon = false;
 
@@ -311,6 +319,7 @@ public bool BossDefeated = false;
 
             case MissionType.Mission9:
                 missionText.text = Mission9;
+                FirstCutSceneCanvasObj.SetActive(false);
 
                 shouldAiSpawnerAllDeactivate = true;
                 weaponInLight.isUnableToUsWeapon = true;
@@ -332,6 +341,7 @@ public bool BossDefeated = false;
 
             case MissionType.Mission10:
                 missionText.text = Mission10;
+                FirstCutSceneCanvasObj.SetActive(false);
                 GoalArray[9].SetActive(false);
                 SceneManager.LoadScene(3);
                 break;

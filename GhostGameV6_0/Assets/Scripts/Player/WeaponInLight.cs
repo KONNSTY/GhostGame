@@ -199,7 +199,7 @@ Mouse
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ai") && canAiBeDamaged == true)
+        if (other.CompareTag("Ai") && canAiBeDamaged == true )
         {
             AiController ai = other.GetComponent<AiController>();
             
@@ -216,6 +216,25 @@ Mouse
                 ai.shockenable = true; // Activate shock effect on AI
                 
                 Debug.Log("AI forced to GoBack state by light!");
+            }
+        }
+        else if (other.CompareTag("AiBoss") && canAiBeDamaged == true)
+        {
+            AiBoss aiBoss = other.GetComponent<AiBoss>();
+            
+            if (aiBoss != null)
+            {
+                // AI Boss zum Rückzug zwingen
+                aiBoss.state = AiBoss.AiState.GoBack;
+                aiBoss.AiShouldEscape = true;
+                aiBoss.shouldGoback = false; // Reset für neue GoBack-Bewegung
+                
+                // AI Boss stoppen und Schaden zufügen
+                aiBoss.navMeshAgent.ResetPath();
+                aiBoss.health -= lightdamage;
+                aiBoss.shockenable = true; // Activate shock effect on AI Boss
+                
+                Debug.Log("AI Boss forced to GoBack state by light!");
             }
         }
     }

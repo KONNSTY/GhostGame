@@ -19,7 +19,7 @@ public class AiController : MonoBehaviour
     public GameObject Ghost;
     public Animator GhostAnimator;
 
-    public float damageToPlayer = 5f;
+    public float damageToPlayer = 5f; // ✅ Reduziert von 2f auf 1f
 
     public GameObject ShockEffect;
 
@@ -70,9 +70,9 @@ public class AiController : MonoBehaviour
 
     public WeaponInLight weaponInLight;
 
-    // ✅ FIX: Damage Cooldown hinzufügen
-    private float lastDamageTime = 2f;
-    private float damageCooldown = 1f;
+    // ✅ FIX: Damage Cooldown - langsamer Angriff
+    private float lastDamageTime = 0f;
+    private float damageCooldown = 2f; // ✅ Erhöht von 1f auf 2f
 
     // ✅ FIX: Coroutine-Control Flags
     private bool isDelayRunning = false;
@@ -100,12 +100,12 @@ public class AiController : MonoBehaviour
             
             if (player == null)
             {
-                player = GameObject.FindGameObjectWithTag("Player");
+                player = GameObject.FindGameObjectWithTag("player");
             }
             
             if (player == null)
             {
-                GameObject[] allPlayers = GameObject.FindGameObjectsWithTag("Player");
+                GameObject[] allPlayers = GameObject.FindGameObjectsWithTag("player");
                 if (allPlayers.Length > 0)
                 {
                     player = allPlayers[0];
@@ -113,7 +113,7 @@ public class AiController : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError($"❌ AI {gameObject.name} kann Player nicht finden! Überprüfe Player Tag.");
+                    Debug.LogError($"❌ AI {gameObject.name} kann Player nicht finden! Überprüfe player Tag (lowercase).");
                 }
             }
             else
@@ -169,8 +169,6 @@ public class AiController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(state + " : Current State of " + gameObject.name);
-
         if (healthBar != null)
         {
             healthBar.fillAmount = health / 100f;
@@ -183,12 +181,9 @@ public class AiController : MonoBehaviour
 
         if (health <= 10 && cantDieAgain == false)
         {
-            Die(); // ✅ FIX: Verwende Die() Methode
+            Die();
             return;
         }
-
-        if (shouldDestoryGameObject == true)
-            Destroy(gameObject, 2f);
 
         if (isDead && state == AiState.Die) return;
 
@@ -256,7 +251,8 @@ public class AiController : MonoBehaviour
                         navMeshAgent.stoppingDistance = 0.5f;
                         navMeshAgent.SetDestination(player.transform.position);
 
-                        if (navMeshAgent.remainingDistance < 0.5f)
+                        // ✅ FIX: Check hasPath to prevent errors
+                        if (navMeshAgent.hasPath && !navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
                         {
                             state = AiState.GoBack;
                         }
@@ -327,18 +323,15 @@ public class AiController : MonoBehaviour
             case AiState.AttackPlayer:
                 navMeshAgent.isStopped = true;
                 
-                if(isCollideWithPlayer == true)
-                {
                 if (Time.time >= lastDamageTime + damageCooldown)
-                
+                {
                     if (pcontroller != null)
                     {
                         pcontroller.health -= damageToPlayer;
                         lastDamageTime = Time.time;
-                        Debug.Log($"💥 AI Angriff! Player Health: {pcontroller.health}");
+                        Debug.Log($"💥 AI {gameObject.name} macht {damageToPlayer} Schaden! Player Health: {pcontroller.health}");
                     }
                 }
-        
                 
                 // ✅ FIX: Coroutine nur einmal starten
                 if (!isAfterAttackRunning)
@@ -386,8 +379,14 @@ public class AiController : MonoBehaviour
         
         shouldDestoryGameObject = true;
         
+        // Destroy GameObject nach 2 Sekunden
+        Destroy(gameObject, 2f);
+        
         // NavMesh nach 1 Sekunde deaktivieren
-        Invoke("DisableNavMesh", 1f);
+        if (!IsInvoking("DisableNavMesh"))
+        {
+            Invoke("DisableNavMesh", 1f);
+        }
     }
 
     // ✅ NEU: Coroutine Flags zurücksetzen
@@ -458,30 +457,31 @@ public class AiController : MonoBehaviour
     {
         if (isDead) return;
 
-        isCollideWithPlayer = true;
+        Debug.Log($"🔍 AI {gameObject.name} OnTriggerStay mit: {other.gameObject.name} (Tag: {other.tag})");
 
-        if (other.CompareTag("player")) // ✅ FIX: Konsistente Tag-Überprüfung
+        if (other.CompareTag("player")) // ✅ FIX: Use lowercase p
         {
             state = AiState.AttackPlayer;
             isAttacking = true;
-            Debug.Log($"🎯 AI {gameObject.name} erkannt Spieler: {other.name}");
+            Debug.Log($"🎯 AI {gameObject.name} kollidiert mit Player - AttackPlayer State aktiviert!");
         }
         else if (other.CompareTag("weapon")) // ✅ FIX: Verwende Weapon Tag statt Spot Light name
         {
             AiShouldEscape = true;
             Debug.Log($"💡 AI {gameObject.name} flüchtet vor Licht!");
         }
+        else
+        {
+            Debug.LogWarning($"⚠️ AI {gameObject.name}: Kollision mit {other.gameObject.name} aber falscher Tag: '{other.tag}' (erwartet 'player' oder 'weapon')");
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
-isCollideWithPlayer = false;
-
         if (other.CompareTag("player"))
         {
             isAttacking = false;
             state = AiState.GoBack;
-            Debug.Log($"🚪 AI {gameObject.name}: Player {other.name} verlässt Trigger");
         }
 
         if (navMeshAgent != null && !isDead)

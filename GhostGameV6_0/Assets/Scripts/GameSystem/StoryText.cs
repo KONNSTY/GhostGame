@@ -24,6 +24,7 @@ public class StoryText : MonoBehaviour
     public string[] Mission8;
 
     public string[] Mission9;
+    public string[] Mission10;
 
     public GameMode gm;
 
@@ -60,16 +61,17 @@ STcurrentIndexInArray = -1;
         SetGameObjActive = false;
         
         // Array-Initialisierung vor GetComponent
-        Mission0 = new string[10];
-        Mission1 = new string[3];
-        Mission2 = new string[3];
-        Mission3 = new string[3];
-        Mission4 = new string[2];
-        Mission5 = new string[2];
-        Mission6 = new string[2];
-        Mission7 = new string[2];
-        Mission8 = new string[2];
-        Mission9 = new string[2];
+        Mission0 = new string[20];
+        Mission1 = new string[12];
+        Mission2 = new string[1];
+        Mission3 = new string[2];
+        Mission4 = new string[1];
+        Mission5 = new string[4];
+        Mission6 = new string[4];
+        Mission7 = new string[1];
+        Mission8 = new string[1];
+        Mission9 = new string[5];
+        Mission10 = new string[2];
 
         if(PauseCanvas != null)
         {
@@ -106,64 +108,90 @@ STcurrentIndexInArray = -1;
         }
 
         // Mission-Texte setzen
-        Mission0[0] = "Sebastian: Willkommen in unserer Stadt, schön dich wiederzusehen, Jill! Wir haben uns lange nicht gesehen. Was führteuch hierher?";
-        Mission0[1] = "JIll: Nach all den Jahren wollten wir nur mal wieder hierher kommen. Das ist meine beste Freundin Lina, sie kannte auch meine Schwester..";
-        Mission0[2] = "Sebastian: Hallo Lina! Ach, sie kannte sie auch? Es tut mir so leid, was du damals durchmachen musstest.";
-        Mission0[3] = "Jill: ...";
-        Mission0[4] = "Sebastian: Kann ich was für euch tun? Euch herumführen?";
-        Mission0[5] = "Jill: Ja, gerne! Sag mal, wie kommt man am besten zum Friedhof? Wir wollen meiner Schwester einen Besuch abstatten.";
-        Mission0[6] = "Sebastian: In den Wald, um die Zeit? Tut mir leid, niemand geht in den Wald, wenn es dunkel wird!";
-        Mission0[7] = "Jill: Wir müssen aber jetzt in den Wald!!!";
-        Mission0[8] = "Sebastian: O.k., o.k.! Hier ist ein Talisman. Ich hab ihn selbst gemacht, falls ihr... Ach, nicht so wichtig. Ich begleiteeuch bis zum Wald, ab dann seid ihr auf euch allein gestellt.";
-        Mission0[9] = "Jill: Danke, Sebastian...";
+        Mission0[0] = "When the two girls arrive by ferry in the small town, they are greeted by Sebastian—a strange man, a family friend.";
+        Mission0[1] = "He always wears this odd suit. He welcomes them but warns them not to enter the forest.";
+        Mission0[2] = "Ever since Jill's sister disappeared, nobody goes there anymore.";
+        Mission0[3] = "People say strange things happen. The police closed off the area, claiming it's unsafe.";
+        Mission0[4] = "The girls tell him they plan to go into the forest, but he insists it's a bad idea.";
+        Mission0[5] = "He can't stop them, so he gives them flashlights he built himself—unused prototypes.";
+        Mission0[6] = "He says he is fascinated by the supernatural, and rumors say the forest is haunted.";
+        Mission0[7] = "The flashlights, supposedly, can repel spirits.";
+        Mission0[8] = "Jill and Lina wander through town before deciding to head into the forest.";
+        Mission0[9] = "Sebastian: \"Welcome back to our town, Jill! It's been a long time. What brings you here?\"";
+        Mission0[10] = "Jill: \"After all these years, we just wanted to come back. This is my best friend Lina—she knew my sister too.\"";
+        Mission0[11] = "Sebastian: \"Hello, Lina! She knew her as well? I'm so sorry for what you went through.\"";
+        Mission0[12] = "Jill: \"…\"";
+        Mission0[13] = "Sebastian: \"Can I help you? Want a tour?\"";
+        Mission0[14] = "Jill: \"Sure. Tell me… how do we get to the cemetery? We want to visit my sister.\"";
+        Mission0[15] = "Sebastian: \"Into the forest? At this hour? No one goes into the woods once it gets dark!\"";
+        Mission0[16] = "Jill: \"But we need to go now!\"";
+        Mission0[17] = "Sebastian: \"Alright, alright! Here, take this talisman. I made it myself, just in case… well, never mind.";
+        Mission0[18] = "I'll walk you to the forest entrance. From there, you're on your own.\"";
+        Mission0[19] = "Jill: \"Thank you, Sebastian…\"";
+    
        
-        Mission1[0] = "Mission 1: Die erste Herausforderung beginnt.";
-        Mission1[1] = "Sammle alle Gegenstände ein.";
-        Mission1[2] = "Jill: Danke, Sebastian...";
+        Mission1[0] = "Inside the woods, the girls turn on their flashlights.";
+        Mission1[1] = "As they walk deeper, they suddenly hear ghostly whispers.";
+        Mission1[2] = "Spirits appear out of nowhere. The girls must fight them off.";
+        Mission1[3] = "After defeating the spirits, they try to leave—but some force stops them. They are trapped.";
+        Mission1[4] = "They venture further and find a note. Jill thinks it might be from her sister. It reads:";
+        Mission1[5] = "'I'm so alone. Ever since I came here, I haven't been able to leave.";
+        Mission1[6] = "The forest won't let me. It won't let me.'";
+        Mission1[7] = "As they continue, they suddenly see Jill's sister.";
+        Mission1[8] = "She whispers:";
+        Mission1[9] = "'Why didn't you look for me?'";
+        Mission1[10] = "Then she vanishes.";
+        Mission1[11] = "The path is blocked by the same mysterious force. The girls find a strange key and manage to pass through.";
 
-        Mission2[0] = "Mission 2: Tiefer in das Geheimnis.";
-        Mission2[1] = "Die Geister werden stärker.";
-        Mission2[2] = "Folge den Hinweisen.";
+        Mission2[0] = "We need to go deeper into the forest.";
 
-        Mission3[0] = "Mission 3: Das Rätsel löst sich.";
-        Mission3[1] = "Du näherst dich der Wahrheit.";
-        Mission3[2] = "Aber die Gefahr steigt.";
+        Mission3[0] = "This path leads to a graveyard.";
+        Mission3[1] = "Lina: \"Where is the key to the grave? Let's keep searching for it.\"";
 
-        Mission4[0] = "Mission 4: Neue Erkenntnisse.";
-        Mission4[1] = "Die Vergangenheit enthüllt sich.";
+        Mission4[0] = "Let's find the key and go to the grave.";
 
-        Mission5[0] = "Mission 5: Der Wendepunkt.";
-        Mission5[1] = "Nichts ist wie es scheint.";
+        Mission5[0] = "Something feels wrong. They find graves with their own names engraved on them.";
+        Mission5[1] = "Beside Jill's grave lies a supposed farewell letter—from Jill—claiming she couldn't bear the guilt over her sister anymore.";
+        Mission5[2] = "They look for a shovel and dig up Jill's grave.";
+        Mission5[3] = "It is empty.";
 
-        Mission6[0] = "Mission 6: Die Jagd beginnt.";
-        Mission6[1] = "Du wirst selbst zum Gejagten.";
+        Mission6[0] = "The next area is engulfed in light. The girls are pulled in.";
+        Mission6[1] = "Suddenly they're in Jill's apartment—her sister standing there, acting completely normal.";
+        Mission6[2] = "But when Jill and Lina try to confront her about the illusion, she avoids the questions. They play along for now.";
+        Mission6[3] = "A fight breaks out between Jill and Lina. Lina storms into Jill's room.";
 
-        Mission7[0] = "Mission 7: Kampf ums Überleben.";
-        Mission7[1] = "Setze alles auf eine Karte.";
+        Mission7[0] = "Why is it so quiet here?";
 
-        Mission8[0] = "Mission 8: Die finale Konfrontation.";
-        Mission8[1] = "Bereite dich auf das Ende vor.";
+        Mission8[0] = "When Jill follows, Lina can suddenly no longer see her. She's on the phone, talking about Jill's funeral. The vision abruptly ends.";
 
-        Mission9[0] = "Mission 9: Das große Finale.";
-        Mission9[1] = "Alles steht auf dem Spiel.";
+        Mission9[0] = "They reach the final place: the grave of Jill's sister. Her sister stands before it and runs toward Jill.";
+        Mission9[1] = "Sister: 'You finally found me. Now we can go.'";
+        Mission9[2] = "Jill: 'We can't go. You're dead.'";
+        Mission9[3] = "Her sister: 'Come on, Jill… let's go. Let's be together forever.'";
+        Mission9[4] = "She runs ahead.";
+
+        Mission10[0] = "The girls stand before the town gate. Lina? Where is Lina? Jill realizes no one recognizes her. An interview with Lina appears.";
+        Mission10[1] = "'Jill, we're finally together again.' A bright light appears before them, and they walk into it.";
 
     }
 
     void Update()
     {
-        if (isStoryBackgroundPauseTheGame == false && pauseMenuObj.isGamePaused == false)
+        if (pauseMenuObj != null)
         {
-            Time.timeScale = 1; // Spiel läuft normal weiter
+            if (isStoryBackgroundPauseTheGame == false && pauseMenuObj.isGamePaused == false)
+            {
+                Time.timeScale = 1; // Spiel läuft normal weiter
+            }
+            else
+            {
+                Time.timeScale = 0; // Spiel pausiert
+            }
         }
-        else
-        {
-            Time.timeScale = 0; // Spiel pausiert
-}
 
         // Story Background Verwaltung basierend auf SetGameObjActive
         if (SetGameObjActive)
         {
-           
             if (StoryBackground != null && !StoryBackground.activeInHierarchy)
             {
                 StoryBackground.SetActive(true);
@@ -180,164 +208,130 @@ STcurrentIndexInArray = -1;
         }
 
         // Text-Anzeige basierend auf aktueller Mission
+        if (TextC == null) return;
+        
         switch (currentTextIndex)
         {
             case 0:
-                if (Mission0 != null && index1 < Mission0.Length)
+                if (index1 < Mission0.Length)
                 {
-                    
                     TextC.text = Mission0[index1];
-                    if (index1 == Mission0.Length - 1)
-                    {
-                        isStoryBackgroundPauseTheGame = false;
-                        SetGameObjActive = false; // Deaktiviere Story Background
-                      
-                    }
+                }
+                else if (index1 >= Mission0.Length)
+                {
+                    isStoryBackgroundPauseTheGame = false;
+                    SetGameObjActive = false;
                 }
                 break;
             case 1:
                 if (Mission1 != null && index1 < Mission1.Length)
                 {
-                   
                     TextC.text = Mission1[index1];
-                    if (index1 == Mission1.Length - 1)
-                    {
-                        isStoryBackgroundPauseTheGame = false;
-                        SetGameObjActive = false; // Deaktiviere Story Background
-                    
-                    }
+                }
+                else if (index1 >= Mission1.Length)
+                {
+                    // ✅ FIX: Erst deaktivieren wenn über das Ende hinaus
+                    isStoryBackgroundPauseTheGame = false;
+                    SetGameObjActive = false;
                 }
                 break;
             case 2:
                 if (Mission2 != null && index1 < Mission2.Length)
                 {
-                
                     TextC.text = Mission2[index1];
-                    if (index1 == Mission2.Length - 1)
-                    {
-                        isStoryBackgroundPauseTheGame = false;
-                        SetGameObjActive = false; // Deaktiviere Story Background
-                   
-                    }
+                }
+                else if (index1 >= Mission2.Length)
+                {
+                    isStoryBackgroundPauseTheGame = false;
+                    SetGameObjActive = false;
                 }
                 break;
             case 3:
                 if (Mission3 != null && index1 < Mission3.Length)
                 {
-                    
                     TextC.text = Mission3[index1];
-                    if (index1 == Mission3.Length - 1)
-                    {
-                   isStoryBackgroundPauseTheGame = false;
-                        if (StoryBackground != null)
-                            StoryBackground.SetActive(false);
-               
-                    
-             
-                    }
+                }
+                else if (index1 >= Mission3.Length)
+                {
+                    isStoryBackgroundPauseTheGame = false;
+                    SetGameObjActive = false;
                 }
                 break;
             case 4:
-                if (Mission4 != null && index1 < Mission4.Length)
+                if (index1 < Mission4.Length)
                 {
-              
                     TextC.text = Mission4[index1];
-                    if (index1 == Mission4.Length - 1)
-                    {
-                        isStoryBackgroundPauseTheGame = false;
-                        if (StoryBackground != null)
-                            StoryBackground.SetActive(false);
-             
-                
-           
-                    }
+                }
+                else if (index1 >= Mission4.Length)
+                {
+                    isStoryBackgroundPauseTheGame = false;
+                    SetGameObjActive = false;
                 }
                 break;
             case 5:
-                if (Mission5 != null && index1 < Mission5.Length)
+                if (index1 < Mission5.Length)
                 {
-                 
                     TextC.text = Mission5[index1];
-                    if (index1 == Mission5.Length - 1)
-                    {
-                            isStoryBackgroundPauseTheGame = false;
-                  
-                        if (StoryBackground != null)
-                            StoryBackground.SetActive(false);
-                
-           
-                 
-                   }
+                }
+                else if (index1 >= Mission5.Length)
+                {
+                    isStoryBackgroundPauseTheGame = false;
+                    SetGameObjActive = false;
                 }
                 break;
             case 6:
-                if (Mission6 != null && index1 < Mission6.Length)
+                if (index1 < Mission6.Length)
                 {
-                 
                     TextC.text = Mission6[index1];
-                    if (index1 == Mission6.Length - 1)
-                        
-                    { 
-                        isStoryBackgroundPauseTheGame = false;
-                        
-
-                        if (StoryBackground != null)
-                            StoryBackground.SetActive(false);
-          
-
-              
-                    }
+                }
+                else if (index1 >= Mission6.Length)
+                {
+                    isStoryBackgroundPauseTheGame = false;
+                    SetGameObjActive = false;
                 }
                 break;
             case 7:
-                if (Mission7 != null && index1 < Mission7.Length)
+                if (index1 < Mission7.Length)
                 {
-              
                     TextC.text = Mission7[index1];
-                    if (index1 == Mission7.Length - 1)
-                    {
-                        isStoryBackgroundPauseTheGame = false;
-                        if (StoryBackground != null)
-                            StoryBackground.SetActive(false);
- 
-                    
-             
-                  
-                    }
+                }
+                else if (index1 >= Mission7.Length)
+                {
+                    isStoryBackgroundPauseTheGame = false;
+                    SetGameObjActive = false;
                 }
                 break;
             case 8:
-                if (Mission8 != null && index1 < Mission8.Length)
+                if (index1 < Mission8.Length)
                 {
-                 
                     TextC.text = Mission8[index1];
-                    if (index1 == Mission8.Length - 1)
-                    {
-                        isStoryBackgroundPauseTheGame = false;
-                        if (StoryBackground != null)
-                            StoryBackground.SetActive(false);
-                       
-                 
-                
-                    }
+                }
+                else if (index1 >= Mission8.Length)
+                {
+                    isStoryBackgroundPauseTheGame = false;
+                    SetGameObjActive = false;
                 }
                 break;
             case 9:
-                if (Mission9 != null && index1 < Mission9.Length)
+                if (index1 < Mission9.Length)
                 {
-                 
                     TextC.text = Mission9[index1];
-                    if (index1 == Mission9.Length - 1)
-                    {
-                        isStoryBackgroundPauseTheGame = false;
-                        if (StoryBackground != null)
-                            StoryBackground.SetActive(false);
-                        if (gm.currentMIssion == GameMode.MissionType.Mission9)
-            {
-                gm.currentMIssion = GameMode.MissionType.Mission10;
-            }
-                  
-                    }
+                }
+                else if (index1 >= Mission9.Length)
+                {
+                    isStoryBackgroundPauseTheGame = false;
+                    SetGameObjActive = false;
+                }
+                break;
+            case 10:
+                if (index1 < Mission10.Length)
+                {
+                    TextC.text = Mission10[index1];
+                }
+                else if (index1 >= Mission10.Length)
+                {
+                    isStoryBackgroundPauseTheGame = false;
+                    SetGameObjActive = false;
                 }
                 break;
         }
@@ -353,11 +347,11 @@ STcurrentIndexInArray = -1;
     {
         STcurrentIndexInArray++;
         currentTextIndex = STcurrentIndexInArray;
-     isStoryBackgroundPauseTheGame = true;
-        StoryBackground.SetActive(true);
+        isStoryBackgroundPauseTheGame = true;
+        if (StoryBackground != null)
+            StoryBackground.SetActive(true);
         index1 = 0;
         SetGameObjActive = true;
-    // Spiel pausieren
         
         Debug.Log($"Mission Story gestartet - StoryBackground wird aktiviert");
     }

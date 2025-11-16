@@ -97,11 +97,12 @@ MonoBehaviour:
   navMeshAgent: {fileID: 6929317210700967907}
   playertarget: {x: 0, y: 0, z: 0}
   isDead: 0
+  isCollideWithPlayer: 0
   player: {fileID: 0}
   pcontroller: {fileID: 0}
   Ghost: {fileID: 0}
   GhostAnimator: {fileID: 0}
-  damageToPlayer: 20
+  damageToPlayer: 5
   ShockEffect: {fileID: 3043692535004270722}
   shockenable: 0
   isDestroyPossibleForai: 0

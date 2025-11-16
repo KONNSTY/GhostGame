@@ -101,7 +101,7 @@ MonoBehaviour:
   pcontroller: {fileID: 0}
   Ghost: {fileID: 0}
   GhostAnimator: {fileID: 0}
-  damageToPlayer: 5
+  damageToPlayer: 10
   ShockEffect: {fileID: 0}
   shockenable: 0
   isDestroyPossibleForai: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   shouldThePlayerBeAtacked: 0
   AiShouldEscape: 0
   weaponInLight: {fileID: 0}
+  gameMode: {fileID: 0}
 --- !u!1 &3549783355970695029
 GameObject:
   m_ObjectHideFlags: 0
