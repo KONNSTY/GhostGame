@@ -1126,9 +1126,6 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1721027534630975941, guid: f1b5f89e6e90a44b8a7796ba89c05664, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1914341694}
-    - targetCorrespondingSourceObject: {fileID: 1721027534630975941, guid: f1b5f89e6e90a44b8a7796ba89c05664, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 864782413}
     - targetCorrespondingSourceObject: {fileID: 1721027534630975941, guid: f1b5f89e6e90a44b8a7796ba89c05664, type: 3}
       insertIndex: -1
@@ -1139,6 +1136,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1721027534630975941, guid: f1b5f89e6e90a44b8a7796ba89c05664, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1512226183}
+    - targetCorrespondingSourceObject: {fileID: 1721027534630975941, guid: f1b5f89e6e90a44b8a7796ba89c05664, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 211131209}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6010844549337237074, guid: f1b5f89e6e90a44b8a7796ba89c05664, type: 3}
       insertIndex: -1
@@ -1526,6 +1526,82 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8410533757651000255, guid: f1b5f89e6e90a44b8a7796ba89c05664, type: 3}
   m_PrefabInstance: {fileID: 137196482}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &211131208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 211131209}
+  - component: {fileID: 211131211}
+  - component: {fileID: 211131210}
+  m_Layer: 5
+  m_Name: Mission UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &211131209
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211131208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1914341694}
+  m_Father: {fileID: 1918387474}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &211131210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211131208}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.5647059, g: 0.49411765, b: 0.49411765, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &211131211
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211131208}
+  m_CullTransparentMesh: 1
 --- !u!1 &219786740
 GameObject:
   m_ObjectHideFlags: 0
@@ -14271,14 +14347,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914341693}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1134223084}
   - {fileID: 467064248}
-  m_Father: {fileID: 1918387474}
+  m_Father: {fileID: 211131209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -14363,6 +14439,7 @@ MonoBehaviour:
   Mission7: []
   Mission8: []
   Mission9: []
+  Mission10: []
   gm: {fileID: 497744828}
   currentTextIndex: 0
   index1: 0

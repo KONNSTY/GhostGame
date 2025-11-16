@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47cd0e3470acef149987ca50d4e41248, type: 3}
+  m_Name: DialougManager
+  m_EditorClassIdentifier: Assembly-CSharp::DialougManager
+  CutScene:
+  - mission: 0
+    cutSceneImage: {fileID: 21300000, guid: 4a3c60388734e46228a42c6a64ddd639, type: 3}
+    cutSceneDialog: Eight years ago, Jill's sister disappeared under mysterious circumstances.
+  - mission: 1
+    cutSceneImage: {fileID: 21300000, guid: 9a2cb37bd4544405bbf165bbed695cbe, type: 3}
+    cutSceneDialog: "When the two girls arrive by ferry in the small town, they are
+      greeted by Sebastian\u2014a strange man, a family friend."
+  - mission: 2
+    cutSceneImage: {fileID: 21300000, guid: 3e06d8e74d5394c719ec6145195d6c16, type: 3}
+    cutSceneDialog: "When the two girls arrive by ferry in the small town, they are
+      greeted by Sebastian\u2014a strange man, a family friend."

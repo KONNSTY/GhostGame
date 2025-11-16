@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|d:\\freelance projects\\ghostgame\\ghostgamev6_0\\assets\\scripts\\gamesystem\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|d:\\freelance projects\\ghostgame\\ghostgamev6_0\\assets\\scritableobjects\\scripts\\dialougmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scritableobjects\\scripts\\dialougmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\assets\\scripts\\gamesystem\\gamemode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesystem\\gamemode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\assets\\scripts\\gamesystem\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesystem\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|d:\\freelance projects\\ghostgame\\ghostgamev6_0\\assets\\scripts\\ui\\settingsui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\assets\\scripts\\ui\\settingsui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\settingsui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\assets\\scripts\\singletons\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\singletons\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\assets\\scripts\\gamesystem\\gamemode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesystem\\gamemode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,19 +47,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DialougManager.cs",
+              "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\ScritableObjects\\Scripts\\DialougManager.cs",
+              "RelativeDocumentMoniker": "Assets\\ScritableObjects\\Scripts\\DialougManager.cs",
+              "ToolTip": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\ScritableObjects\\Scripts\\DialougManager.cs",
+              "RelativeToolTip": "Assets\\ScritableObjects\\Scripts\\DialougManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T14:02:00.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\MainMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystem\\MainMenu.cs",
               "ToolTip": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\MainMenu.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameSystem\\MainMenu.cs",
-              "ViewState": "AgIAANAAAAAAAAAAAAAAAOcAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAM0AAAAAAAAAAIBQwOcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T14:19:29.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T14:19:29.754Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "SettingsUI.cs",
               "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\UI\\SettingsUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\SettingsUI.cs",
@@ -63,12 +79,11 @@
               "RelativeToolTip": "Assets\\Scripts\\UI\\SettingsUI.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAAwDAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T11:51:13.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T11:51:13.056Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "AudioManager.cs",
               "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\Singletons\\AudioManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Singletons\\AudioManager.cs",
@@ -76,18 +91,17 @@
               "RelativeToolTip": "Assets\\Scripts\\Singletons\\AudioManager.cs",
               "ViewState": "AgIAAFYAAAAAAAAAAAAuwCMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T11:30:33.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T11:30:33.2Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "GameMode.cs",
               "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\GameMode.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystem\\GameMode.cs",
               "ToolTip": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\GameMode.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameSystem\\GameMode.cs",
-              "ViewState": "AgIAAJUAAAAAAAAAAAAAAIoAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAjwEYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-13T07:18:28.742Z"
             }

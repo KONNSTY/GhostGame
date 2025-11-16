@@ -68,6 +68,7 @@ public bool BossDefeated = false;
 
     public GameObject FirstCutSceneCanvasObj;
 
+    [System.Serializable]
     public enum MissionType
     {
         Mission0, Mission1, Mission2, Mission3, Mission4, Mission5,
