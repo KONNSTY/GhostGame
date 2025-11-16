@@ -218,7 +218,7 @@ Mouse
                 Debug.Log("AI forced to GoBack state by light!");
             }
         }
-        else if (other.CompareTag("AiBoss") && canAiBeDamaged == true)
+        else if (other.gameObject.name == "GhostBoss" && canAiBeDamaged == true)
         {
             AiBoss aiBoss = other.GetComponent<AiBoss>();
             
