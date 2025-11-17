@@ -46,6 +46,8 @@ public class StoryText : MonoBehaviour
 
     private bool isStoryBackgroundPauseTheGame;
 
+    private bool isTriggered = false;
+
 public int STcurrentIndexInArray;
 
 
@@ -220,6 +222,7 @@ STcurrentIndexInArray = -1;
                 else if (index1 >= Mission0.Length)
                 {
                     isStoryBackgroundPauseTheGame = false;
+                    isTriggered = false;
                     SetGameObjActive = false;
                 }
                 break;
@@ -232,6 +235,7 @@ STcurrentIndexInArray = -1;
                 {
                     // ✅ FIX: Erst deaktivieren wenn über das Ende hinaus
                     isStoryBackgroundPauseTheGame = false;
+                    isTriggered = false;
                     SetGameObjActive = false;
                 }
                 break;
@@ -243,6 +247,7 @@ STcurrentIndexInArray = -1;
                 else if (index1 >= Mission2.Length)
                 {
                     isStoryBackgroundPauseTheGame = false;
+                    isTriggered = false;
                     SetGameObjActive = false;
                 }
                 break;
@@ -254,6 +259,7 @@ STcurrentIndexInArray = -1;
                 else if (index1 >= Mission3.Length)
                 {
                     isStoryBackgroundPauseTheGame = false;
+                    isTriggered = false;
                     SetGameObjActive = false;
                 }
                 break;
@@ -265,6 +271,7 @@ STcurrentIndexInArray = -1;
                 else if (index1 >= Mission4.Length)
                 {
                     isStoryBackgroundPauseTheGame = false;
+                    isTriggered = false;
                     SetGameObjActive = false;
                 }
                 break;
@@ -276,6 +283,7 @@ STcurrentIndexInArray = -1;
                 else if (index1 >= Mission5.Length)
                 {
                     isStoryBackgroundPauseTheGame = false;
+                    isTriggered = false;
                     SetGameObjActive = false;
                 }
                 break;
@@ -287,6 +295,7 @@ STcurrentIndexInArray = -1;
                 else if (index1 >= Mission6.Length)
                 {
                     isStoryBackgroundPauseTheGame = false;
+                    isTriggered = false;
                     SetGameObjActive = false;
                 }
                 break;
@@ -298,6 +307,7 @@ STcurrentIndexInArray = -1;
                 else if (index1 >= Mission7.Length)
                 {
                     isStoryBackgroundPauseTheGame = false;
+                    isTriggered = false;
                     SetGameObjActive = false;
                 }
                 break;
@@ -309,6 +319,7 @@ STcurrentIndexInArray = -1;
                 else if (index1 >= Mission8.Length)
                 {
                     isStoryBackgroundPauseTheGame = false;
+                    isTriggered = false;
                     SetGameObjActive = false;
                 }
                 break;
@@ -320,6 +331,7 @@ STcurrentIndexInArray = -1;
                 else if (index1 >= Mission9.Length)
                 {
                     isStoryBackgroundPauseTheGame = false;
+                    isTriggered = false;
                     SetGameObjActive = false;
                 }
                 break;
@@ -331,6 +343,7 @@ STcurrentIndexInArray = -1;
                 else if (index1 >= Mission10.Length)
                 {
                     isStoryBackgroundPauseTheGame = false;
+                    isTriggered = false;
                     SetGameObjActive = false;
                 }
                 break;
@@ -345,6 +358,7 @@ STcurrentIndexInArray = -1;
     // Öffentliche Methode zum Starten einer bestimmten Mission Story
     public void StartMissionStory()
     {
+        isTriggered = true;
         STcurrentIndexInArray++;
         currentTextIndex = STcurrentIndexInArray;
         isStoryBackgroundPauseTheGame = true;
