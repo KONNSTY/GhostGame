@@ -102,11 +102,7 @@ public class PlayerController : MonoBehaviour
 
             dir = transform.forward * speed * vertical;
 
-            // ✅ FIX: Null-Check für rb
-            if (rb != null)
-            {
-                rb.linearVelocity = dir * Time.deltaTime * speed;
-            }
+            
 
             if (Time.timeScale > 0 && cameraVC != null) // ✅ FIX: Camera Null-Check
             {
