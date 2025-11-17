@@ -30,7 +30,7 @@ public class StoryText : MonoBehaviour
 
 
     public int currentTextIndex = 0;
-    [HideInInspector] public int index1 = 0;
+   public int index1 = 0;
 
  
     public TMP_Text TextC; // Universelle TextMeshPro Component
