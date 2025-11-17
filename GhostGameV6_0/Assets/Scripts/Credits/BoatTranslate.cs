@@ -13,6 +13,7 @@ public class BoatTranslate : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Time.timeScale = 1f;
     }
 
     void Update()
