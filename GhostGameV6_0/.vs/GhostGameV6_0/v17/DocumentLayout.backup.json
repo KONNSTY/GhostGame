@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|d:\\freelance projects\\ghostgame\\ghostgamev6_0\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\assets\\scripts\\gamesystem\\storytext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesystem\\storytext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|d:\\freelance projects\\ghostgame\\ghostgamev6_0\\assets\\scripts\\interactiveobj\\interacgoal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactiveobj\\interacgoal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|d:\\freelance projects\\ghostgame\\ghostgamev6_0\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\assets\\scripts\\cutsceneimagescripts\\cutscenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,32 +62,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "InterACGoal.cs",
+              "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\InteractiveObj\\InterACGoal.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\InteractiveObj\\InterACGoal.cs",
+              "ToolTip": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\InteractiveObj\\InterACGoal.cs",
+              "RelativeToolTip": "Assets\\Scripts\\InteractiveObj\\InterACGoal.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAADcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:11:48.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\Player\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
               "ToolTip": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\Player\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerController.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAIBJwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-16T17:19:04.383Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "StoryText.cs",
               "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\StoryText.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystem\\StoryText.cs",
               "ToolTip": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\StoryText.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameSystem\\StoryText.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAQwGoAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAGEBAAAAAAAAAAAAAGgBAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T14:32:06.351Z"
+              "WhenOpened": "2025-11-16T14:32:06.351Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CutScenes.cs",
               "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\CutSceneImageScripts\\CutScenes.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CutSceneImageScripts\\CutScenes.cs",
@@ -95,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DialougManager.cs",
               "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\ScritableObjects\\Scripts\\DialougManager.cs",
               "RelativeDocumentMoniker": "Assets\\ScritableObjects\\Scripts\\DialougManager.cs",
@@ -107,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\MainMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystem\\MainMenu.cs",
@@ -119,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "SettingsUI.cs",
               "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\UI\\SettingsUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\SettingsUI.cs",
@@ -131,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "AudioManager.cs",
               "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\Singletons\\AudioManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Singletons\\AudioManager.cs",
@@ -143,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "GameMode.cs",
               "DocumentMoniker": "D:\\Freelance Projects\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\GameMode.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystem\\GameMode.cs",

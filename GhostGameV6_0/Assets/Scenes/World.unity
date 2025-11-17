@@ -3578,7 +3578,7 @@ PrefabInstance:
       objectReference: {fileID: 657788988}
     - target: {fileID: 2173519029238566158, guid: 56d16f9622aad4afcaa1920cb5a3a4c7, type: 3}
       propertyPath: speed
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2173519029238566158, guid: 56d16f9622aad4afcaa1920cb5a3a4c7, type: 3}
       propertyPath: canvas
