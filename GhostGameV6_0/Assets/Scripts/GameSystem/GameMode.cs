@@ -19,8 +19,9 @@ public class GameMode : MonoBehaviour
 
     private bool isMissionNotLoadAndNight = false;
 
-public bool BossDefeated = false;
- 
+    public bool BossDefeated = false;
+
+
 
     public string Mission0;
     public string Mission1;
@@ -53,9 +54,10 @@ public bool BossDefeated = false;
 
     public GameObject GameUi;
     private StoryText storyText;
-   
 
-   
+
+
+
     public NPcFollowScript[] NPCFollowObj = new NPcFollowScript[3];
 
     public GameObject[] Portals = new GameObject[6];
@@ -69,6 +71,8 @@ public bool BossDefeated = false;
     public GameObject FirstCutSceneCanvasObj;
 
     [System.Serializable]
+
+
     public enum MissionType
     {
         Mission0, Mission1, Mission2, Mission3, Mission4, Mission5,
@@ -291,21 +295,7 @@ public bool BossDefeated = false;
                 weaponInLight.isUnableToUsWeapon = false;
 
 
-                if(BossDefeated == true)
-                {
-
-                   if (GoalArray[8] != null)
-                {
-
-
-                    GoalArray[8].SetActive(true);
-                }
-                else
-                {
-                    GoalArray[8] = GameObject.Find("Goal8");
-                    GoalArray[8].SetActive(true);
-                }
-                }
+            
 
                 if (isMissionNotLoadAndNight == false)
                 {

@@ -80,7 +80,9 @@ public class AiBoss : MonoBehaviour
     
     public bool isCollideWithPlayer = false; // ✅ FIX: Track collision with player
 
+
     public GameMode gameMode;
+   
 
     void Start()
     {
@@ -91,9 +93,9 @@ public class AiBoss : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         EnemyCanvas = GetComponentInChildren<Canvas>();
 
-        if(gameMode == null)
+  if(gameMode == null)
         {
-            gameMode = GameObject.Find("GameMode").GetComponent<GameMode>();
+            gameMode = GameObject.FindAnyObjectByType<GameMode>();
         }
 
         if (EnemyCanvas != null)
@@ -259,7 +261,7 @@ public class AiBoss : MonoBehaviour
 
             case AiState.Die:
                 // ✅ FIX: Die State implementiert
-                gameMode.BossDefeated = true;
+         
 
                 if (GhostAnimator != null)
                 {
@@ -323,7 +325,34 @@ public class AiBoss : MonoBehaviour
         {
             aiCollider.enabled = false;
         }
-        
+
+        if (gameMode != null)
+        {
+            gameMode.BossDefeated = true;
+
+            // Sichere Aktivierung/Deaktivierung des Goal-Objekts an Index 8
+            if (gameMode.GoalArray != null && gameMode.GoalArray.Length > 8)
+            {
+                GameObject goal = gameMode.GoalArray[8];
+                if (goal != null)
+                {
+                    goal.SetActive(true); // <-- anpassen: true/false je nach gewünschter Logik
+                }
+                else
+                {
+                    Debug.LogWarning("GameMode.GoalArray[8] ist null.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("GameMode.GoalArray ist null oder zu kurz.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("gameMode ist null in AiBoss.Die()");
+        }
+
         // ✅ BOSS: Mehrere Kristalle droppen (3-5 Stück)
         if (InterEnegeryCrystal != null && player != null)
         {

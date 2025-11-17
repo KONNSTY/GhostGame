@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4379883355591791815}
   m_Layer: 7
   m_Name: GhostBoss
-  m_TagString: Ai
+  m_TagString: AiBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   shouldThePlayerBeAtacked: 0
   AiShouldEscape: 0
   weaponInLight: {fileID: 0}
+  isCollideWithPlayer: 0
   gameMode: {fileID: 0}
 --- !u!1 &3549783355970695029
 GameObject:

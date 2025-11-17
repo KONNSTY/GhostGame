@@ -1,13 +1,9 @@
-using NUnit.Framework;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class StoryText : MonoBehaviour
 {
-
-    
     public string[] Mission0;
     public string[] Mission1;
     public string[] Mission2;
@@ -26,13 +22,13 @@ public class StoryText : MonoBehaviour
     public string[] Mission9;
     public string[] Mission10;
 
+    private string[][] missions;
+
     public GameMode gm;
 
-
     public int currentTextIndex = 0;
-   public int index1 = 0;
+    public int index1 = 0;
 
- 
     public TMP_Text TextC; // Universelle TextMeshPro Component
     public GameObject TextObj;
     public GameObject StoryBackground;
@@ -48,34 +44,36 @@ public class StoryText : MonoBehaviour
 
     private bool isTriggered = false;
 
-public int STcurrentIndexInArray;
+    public int STcurrentIndexInArray;
 
+    private string[] currentMissionArray;
 
     void Start()
     {
-if(gm == null)
-gm = GameObject.Find("GameMode").GetComponent<GameMode>();
+        if (gm == null)
+            gm = GameObject.Find("GameMode")?.GetComponent<GameMode>();
 
-STcurrentIndexInArray = -1;
+        STcurrentIndexInArray = -1;
 
         isStoryBackgroundPauseTheGame = false;
-
         SetGameObjActive = false;
-        
-        // Array-Initialisierung vor GetComponent
+
+        // Mission-Arrays initialisieren
+        // Mission0 bleibt LEER gemäß Anforderung
         Mission0 = new string[20];
+
         Mission1 = new string[12];
         Mission2 = new string[1];
         Mission3 = new string[2];
         Mission4 = new string[1];
         Mission5 = new string[4];
         Mission6 = new string[4];
-        Mission7 = new string[1];
-        Mission8 = new string[1];
-        Mission9 = new string[5];
-        Mission10 = new string[2];
+        Mission7 = new string[5];
+        Mission8 = new string[2];
+   
 
-        if(PauseCanvas != null)
+
+        if (PauseCanvas != null)
         {
             pauseMenuObj = PauseCanvas.GetComponent<PauseMenu>();
             if (pauseMenuObj == null)
@@ -87,8 +85,7 @@ STcurrentIndexInArray = -1;
         {
             Debug.LogError("PauseCanvas GameObject ist nicht zugewiesen!");
         }
-        
-        // TextMeshPro Component finden (funktioniert für UI und 3D)
+
         if (TextObj != null)
         {
             TextC = TextObj.GetComponent<TMP_Text>();
@@ -109,7 +106,6 @@ STcurrentIndexInArray = -1;
             return;
         }
 
-        // Mission-Texte setzen
         Mission0[0] = "When the two girls arrive by ferry in the small town, they are greeted by Sebastian—a strange man, a family friend.";
         Mission0[1] = "He always wears this odd suit. He welcomes them but warns them not to enter the forest.";
         Mission0[2] = "Ever since Jill's sister disappeared, nobody goes there anymore.";
@@ -130,8 +126,8 @@ STcurrentIndexInArray = -1;
         Mission0[17] = "Sebastian: \"Alright, alright! Here, take this talisman. I made it myself, just in case… well, never mind.";
         Mission0[18] = "I'll walk you to the forest entrance. From there, you're on your own.\"";
         Mission0[19] = "Jill: \"Thank you, Sebastian…\"";
-    
-       
+
+        // Mission-Texte setzen (Mission0 bleibt leer)
         Mission1[0] = "Inside the woods, the girls turn on their flashlights.";
         Mission1[1] = "As they walk deeper, they suddenly hear ghostly whispers.";
         Mission1[2] = "Spirits appear out of nowhere. The girls must fight them off.";
@@ -163,22 +159,31 @@ STcurrentIndexInArray = -1;
         Mission6[3] = "A fight breaks out between Jill and Lina. Lina storms into Jill's room.";
 
         Mission7[0] = "Why is it so quiet here?";
+        Mission7[1] = "When Jill follows, Lina can suddenly no longer see her. She's on the phone, talking about Jill's funeral. The vision abruptly ends.";
 
-        Mission8[0] = "When Jill follows, Lina can suddenly no longer see her. She's on the phone, talking about Jill's funeral. The vision abruptly ends.";
+        Mission7[0] = "They reach the final place: the grave of Jill's sister. Her sister stands before it and runs toward Jill.";
+        Mission7[1] = "Sister: 'You finally found me. Now we can go.'";
+        Mission7[2] = "Jill: 'We can't go. You're dead.'";
+        Mission7[3] = "Her sister: 'Come on, Jill… let's go. Let's be together forever.'";
+        Mission7[4] = "She runs ahead.";
 
-        Mission9[0] = "They reach the final place: the grave of Jill's sister. Her sister stands before it and runs toward Jill.";
-        Mission9[1] = "Sister: 'You finally found me. Now we can go.'";
-        Mission9[2] = "Jill: 'We can't go. You're dead.'";
-        Mission9[3] = "Her sister: 'Come on, Jill… let's go. Let's be together forever.'";
-        Mission9[4] = "She runs ahead.";
+        Mission8[0] = "The girls stand before the town gate. Lina? Where is Lina? Jill realizes no one recognizes her. An interview with Lina appears.";
+        Mission8[1] = "'Jill, we're finally together again.' A bright light appears before them, and they walk into it.";
 
-        Mission10[0] = "The girls stand before the town gate. Lina? Where is Lina? Jill realizes no one recognizes her. An interview with Lina appears.";
-        Mission10[1] = "'Jill, we're finally together again.' A bright light appears before them, and they walk into it.";
+        // Mapping erstellen — Mission0 ist bewusst leer
+        missions = new string[][]
+        {
+            Mission0, Mission1, Mission2, Mission3, Mission4,
+            Mission5, Mission6, Mission7, Mission8, Mission9, Mission10
+        };
 
+        Debug.Log("StoryText initialisiert (Mission0 leer).");
     }
 
     void Update()
     {
+        Debug.Log(currentTextIndex + " StoryTextindex" + (int)gm.currentMIssion + " GameModeindex");
+
         if (pauseMenuObj != null)
         {
             if (isStoryBackgroundPauseTheGame == false && pauseMenuObj.isGamePaused == false)
@@ -209,145 +214,60 @@ STcurrentIndexInArray = -1;
             }
         }
 
-        // Text-Anzeige basierend auf aktueller Mission
+        // Text-Anzeige basierend auf aktueller Mission (verwendet gm.currentMIssion)
         if (TextC == null) return;
-        
-        switch (currentTextIndex)
+        if (!isTriggered) return;
+
+        int missionIndex;
+        if (gm != null)
+            missionIndex = (int)gm.currentMIssion -1;
+        else
+            missionIndex = currentTextIndex;
+
+        // sichere Bounds- und Null-Checks über das missions-Array
+        if (missions == null || missionIndex < 0 || missionIndex >= missions.Length)
         {
-            case 0:
-                if (index1 < Mission0.Length)
-                {
-                    TextC.text = Mission0[index1];
-                }
-                else if (index1 >= Mission0.Length)
-                {
-                    isStoryBackgroundPauseTheGame = false;
-                    isTriggered = false;
-                    SetGameObjActive = false;
-                }
-                break;
-            case 1:
-                if (Mission1 != null && index1 < Mission1.Length)
-                {
-                    TextC.text = Mission1[index1];
-                }
-                else if (index1 >= Mission1.Length)
-                {
-                    // ✅ FIX: Erst deaktivieren wenn über das Ende hinaus
-                    isStoryBackgroundPauseTheGame = false;
-                    isTriggered = false;
-                    SetGameObjActive = false;
-                }
-                break;
-            case 2:
-                if (Mission2 != null && index1 < Mission2.Length)
-                {
-                    TextC.text = Mission2[index1];
-                }
-                else if (index1 >= Mission2.Length)
-                {
-                    isStoryBackgroundPauseTheGame = false;
-                    isTriggered = false;
-                    SetGameObjActive = false;
-                }
-                break;
-            case 3:
-                if (Mission3 != null && index1 < Mission3.Length)
-                {
-                    TextC.text = Mission3[index1];
-                }
-                else if (index1 >= Mission3.Length)
-                {
-                    isStoryBackgroundPauseTheGame = false;
-                    isTriggered = false;
-                    SetGameObjActive = false;
-                }
-                break;
-            case 4:
-                if (index1 < Mission4.Length)
-                {
-                    TextC.text = Mission4[index1];
-                }
-                else if (index1 >= Mission4.Length)
-                {
-                    isStoryBackgroundPauseTheGame = false;
-                    isTriggered = false;
-                    SetGameObjActive = false;
-                }
-                break;
-            case 5:
-                if (index1 < Mission5.Length)
-                {
-                    TextC.text = Mission5[index1];
-                }
-                else if (index1 >= Mission5.Length)
-                {
-                    isStoryBackgroundPauseTheGame = false;
-                    isTriggered = false;
-                    SetGameObjActive = false;
-                }
-                break;
-            case 6:
-                if (index1 < Mission6.Length)
-                {
-                    TextC.text = Mission6[index1];
-                }
-                else if (index1 >= Mission6.Length)
-                {
-                    isStoryBackgroundPauseTheGame = false;
-                    isTriggered = false;
-                    SetGameObjActive = false;
-                }
-                break;
-            case 7:
-                if (index1 < Mission7.Length)
-                {
-                    TextC.text = Mission7[index1];
-                }
-                else if (index1 >= Mission7.Length)
-                {
-                    isStoryBackgroundPauseTheGame = false;
-                    isTriggered = false;
-                    SetGameObjActive = false;
-                }
-                break;
-            case 8:
-                if (index1 < Mission8.Length)
-                {
-                    TextC.text = Mission8[index1];
-                }
-                else if (index1 >= Mission8.Length)
-                {
-                    isStoryBackgroundPauseTheGame = false;
-                    isTriggered = false;
-                    SetGameObjActive = false;
-                }
-                break;
-            case 9:
-                if (index1 < Mission9.Length)
-                {
-                    TextC.text = Mission9[index1];
-                }
-                else if (index1 >= Mission9.Length)
-                {
-                    isStoryBackgroundPauseTheGame = false;
-                    isTriggered = false;
-                    SetGameObjActive = false;
-                }
-                break;
-            case 10:
-                if (index1 < Mission10.Length)
-                {
-                    TextC.text = Mission10[index1];
-                }
-                else if (index1 >= Mission10.Length)
-                {
-                    isStoryBackgroundPauseTheGame = false;
-                    isTriggered = false;
-                    SetGameObjActive = false;
-                }
-                break;
+            EndStory();
+            return;
         }
+
+        currentMissionArray = missions[missionIndex];
+        if (currentMissionArray == null || currentMissionArray.Length == 0)
+        {
+            EndStory();
+            return;
+        }
+
+        if (index1 < currentMissionArray.Length)
+        {
+            TextC.text = currentMissionArray[index1];
+        }
+        else
+        {
+            EndStory();
+        }
+    }
+
+    private void EndStory()
+    {
+        isStoryBackgroundPauseTheGame = false;
+        isTriggered = false;
+        SetGameObjActive = false;
+        if (StoryBackground != null)
+            StoryBackground.SetActive(false);
+
+        // Automatische Mission-Weiterschaltung wenn am Ende einer Mission
+        if (gm != null && index1 >= currentMissionArray.Length)
+        {
+            // Prüfe ob wir bei Mission9 sind (Index 8 im Array, aber Mission9 im Enum)
+            if (gm.currentMIssion == GameMode.MissionType.Mission9)
+            {
+                gm.currentMIssion = GameMode.MissionType.Mission10;
+                Debug.Log("Mission automatisch von Mission9 zu Mission10 gewechselt!");
+            }
+        }
+
+        Debug.Log("Story beendet.");
     }
 
     public void NewText()
@@ -358,20 +278,28 @@ STcurrentIndexInArray = -1;
     // Öffentliche Methode zum Starten einer bestimmten Mission Story
     public void StartMissionStory()
     {
+        if (gm == null)
+            gm = GameObject.Find("GameMode")?.GetComponent<GameMode>();
+
         isTriggered = true;
-        STcurrentIndexInArray++;
-        currentTextIndex = STcurrentIndexInArray;
+
+        if (gm != null)
+        {
+            currentTextIndex = (int)gm.currentMIssion -1;
+
+                    }
+
+        else
+            currentTextIndex = 0;
+
+        STcurrentIndexInArray = currentTextIndex;
+
         isStoryBackgroundPauseTheGame = true;
         if (StoryBackground != null)
             StoryBackground.SetActive(true);
         index1 = 0;
         SetGameObjActive = true;
-        
-        Debug.Log($"Mission Story gestartet - StoryBackground wird aktiviert");
+
+        Debug.Log($"Mission Story gestartet - MissionIndex={STcurrentIndexInArray}");
     }
-
-    // Neue Methode: Startet die nächste Mission Story automatisch
-  
-
-    
 }

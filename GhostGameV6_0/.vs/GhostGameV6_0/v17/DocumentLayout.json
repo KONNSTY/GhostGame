@@ -3,6 +3,50 @@
   "WorkspaceRootPath": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|c:\\users\\konstantin\\onedrive\\dokumente\\github\\ghostgame\\ghostgamev6_0\\assets\\scripts\\gamesystem\\storytext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesystem\\storytext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\assets\\scripts\\gamesystem\\gamemode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesystem\\gamemode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\assets\\scripts\\interactiveobj\\interacgoal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactiveobj\\interacgoal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\assets\\scripts\\cutsceneimagescripts\\cutscenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cutsceneimagescripts\\cutscenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\assets\\scripts\\gamesystem\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesystem\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\assets\\scripts\\ai\\aiboss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai\\aiboss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\assets\\scripts\\player\\weaponinlight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponinlight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderSubGraphImporterEditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderSubGraphImporterEditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderSubGraphImporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderSubGraphImporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderGraphImporterEditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderGraphImporterEditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderGraphImporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderGraphImporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
@@ -11,32 +55,12 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon_forward_fragment.hlsl||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|c:\\users\\konstantin\\onedrive\\dokumente\\github\\ghostgame\\ghostgamev6_0\\assets\\scripts\\gamesystem\\storytext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesystem\\storytext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\assets\\scripts\\interactiveobj\\interacgoal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactiveobj\\interacgoal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\assets\\scripts\\cutsceneimagescripts\\cutscenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cutsceneimagescripts\\cutscenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\assets\\scritableobjects\\scripts\\dialougmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scritableobjects\\scripts\\dialougmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\assets\\scripts\\gamesystem\\gamemode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesystem\\gamemode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\assets\\scripts\\gamesystem\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesystem\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{48CB92AF-A44B-D3FC-F414-F85661471C16}|Assembly-CSharp.csproj|C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\assets\\scripts\\ui\\settingsui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,41 +78,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "AiBoss.cs",
+              "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\Ai\\AiBoss.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Ai\\AiBoss.cs",
+              "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\Ai\\AiBoss.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Ai\\AiBoss.cs",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAnwAcBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T19:45:07.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ShaderSubGraphImporterEditor.cs",
+              "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderSubGraphImporterEditor.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderSubGraphImporterEditor.cs",
+              "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderSubGraphImporterEditor.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderSubGraphImporterEditor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T18:06:04.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ShaderSubGraphImporter.cs",
+              "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderSubGraphImporter.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderSubGraphImporter.cs",
+              "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderSubGraphImporter.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderSubGraphImporter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T18:05:35.668Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ShaderGraphImporterEditor.cs",
+              "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderGraphImporterEditor.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderGraphImporterEditor.cs",
+              "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderGraphImporterEditor.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderGraphImporterEditor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T18:05:25.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ShaderGraphImporter.cs",
+              "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderGraphImporter.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderGraphImporter.cs",
+              "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderGraphImporter.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.shadergraph@287dd3fa176c\\Editor\\Importers\\ShaderGraphImporter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAO4DAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T18:04:53.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "vrmc_materials_mtoon.shader",
               "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon.shader",
               "RelativeDocumentMoniker": "Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon.shader",
               "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon.shader",
               "RelativeToolTip": "Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon.shader",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
-              "WhenOpened": "2025-11-17T17:54:15.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-17T17:54:15.518Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "vrmc_materials_mtoon_forward_fragment.hlsl",
-              "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon_forward_fragment.hlsl",
-              "RelativeDocumentMoniker": "Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon_forward_fragment.hlsl",
-              "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon_forward_fragment.hlsl",
-              "RelativeToolTip": "Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon_forward_fragment.hlsl",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
-              "WhenOpened": "2025-11-17T17:53:12.124Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "InterACGoal.cs",
               "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\InteractiveObj\\InterACGoal.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InteractiveObj\\InterACGoal.cs",
@@ -96,11 +165,12 @@
               "RelativeToolTip": "Assets\\Scripts\\InteractiveObj\\InterACGoal.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAAADcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T12:11:48.813Z"
+              "WhenOpened": "2025-11-17T12:11:48.813Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\Player\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
@@ -112,20 +182,49 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "StoryText.cs",
               "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\StoryText.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystem\\StoryText.cs",
               "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\StoryText.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameSystem\\StoryText.cs",
-              "ViewState": "AgIAAF4BAAAAAAAAAABQwGgBAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAPMAAAAAAAAAAAAowBEBAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-16T14:32:06.351Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "GameMode.cs",
+              "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\GameMode.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystem\\GameMode.cs",
+              "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\GameMode.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameSystem\\GameMode.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAIwFABAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T07:18:28.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "WeaponInLight.cs",
+              "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\Player\\WeaponInLight.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponInLight.cs",
+              "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\Player\\WeaponInLight.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponInLight.cs",
+              "ViewState": "AgIAAOAAAAAAAAAAAAAYwPEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T19:46:15.452Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CutScenes.cs",
               "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\CutSceneImageScripts\\CutScenes.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CutSceneImageScripts\\CutScenes.cs",
@@ -137,7 +236,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\MainMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystem\\MainMenu.cs",
+              "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\MainMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameSystem\\MainMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T14:19:29.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "DialougManager.cs",
               "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\ScritableObjects\\Scripts\\DialougManager.cs",
               "RelativeDocumentMoniker": "Assets\\ScritableObjects\\Scripts\\DialougManager.cs",
@@ -149,19 +260,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MainMenu.cs",
-              "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\MainMenu.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystem\\MainMenu.cs",
-              "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\MainMenu.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameSystem\\MainMenu.cs",
-              "ViewState": "AgIAAM0AAAAAAAAAAIBQwOcAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T14:19:29.754Z"
+              "DocumentIndex": 12,
+              "Title": "vrmc_materials_mtoon_forward_fragment.hlsl",
+              "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon_forward_fragment.hlsl",
+              "RelativeDocumentMoniker": "Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon_forward_fragment.hlsl",
+              "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon_forward_fragment.hlsl",
+              "RelativeToolTip": "Assets\\Plugins\\VRMShaders\\VRM10\\MToon10\\Resources\\VRM10\\vrmc_materials_mtoon_forward_fragment.hlsl",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2025-11-17T17:53:12.124Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "SettingsUI.cs",
               "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\UI\\SettingsUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\SettingsUI.cs",
@@ -173,7 +284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "AudioManager.cs",
               "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\Singletons\\AudioManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Singletons\\AudioManager.cs",
@@ -182,18 +293,6 @@
               "ViewState": "AgIAAFYAAAAAAAAAAAAuwCMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T11:30:33.2Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GameMode.cs",
-              "DocumentMoniker": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\GameMode.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystem\\GameMode.cs",
-              "ToolTip": "C:\\Users\\Konstantin\\OneDrive\\Dokumente\\GitHub\\GhostGame\\GhostGameV6_0\\Assets\\Scripts\\GameSystem\\GameMode.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameSystem\\GameMode.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAjwEYAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T07:18:28.742Z"
             }
           ]
         }

@@ -10,6 +10,8 @@ TagManager:
   - Note
   - Cube
   - weapon
+  - Bullet
+  - AiBoss
   layers:
   - Default
   - TransparentFX
