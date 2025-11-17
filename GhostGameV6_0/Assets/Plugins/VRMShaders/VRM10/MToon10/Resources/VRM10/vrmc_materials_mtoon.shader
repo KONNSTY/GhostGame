@@ -98,7 +98,20 @@ Shader "Hidden/VRM10/vrmc_materials_mtoon"
             #pragma fragment MToonFragment
 
             #include "./vrmc_materials_mtoon_forward_vertex.hlsl"
+
+            // --- Alias both 'i' and 'IN' to a single temporary name so included file works whether it uses 'i' or 'IN' ---
+            #ifndef __VRM_MTOON_FRAG_IN
+            #define __VRM_MTOON_FRAG_IN __vrm_mtoon_frag_in
+            #endif
+            #define i __VRM_MTOON_FRAG_IN
+            #define IN __VRM_MTOON_FRAG_IN
+
             #include "./vrmc_materials_mtoon_forward_fragment.hlsl"
+
+            #undef i
+            #undef IN
+            #undef __VRM_MTOON_FRAG_IN
+
             ENDHLSL
         }
 
@@ -136,7 +149,20 @@ Shader "Hidden/VRM10/vrmc_materials_mtoon"
             #pragma fragment MToonFragment
 
             #include "./vrmc_materials_mtoon_forward_vertex.hlsl"
+
+            // alias both names again for the included fragment
+            #ifndef __VRM_MTOON_FRAG_IN
+            #define __VRM_MTOON_FRAG_IN __vrm_mtoon_frag_in
+            #endif
+            #define i __VRM_MTOON_FRAG_IN
+            #define IN __VRM_MTOON_FRAG_IN
+
             #include "./vrmc_materials_mtoon_forward_fragment.hlsl"
+
+            #undef i
+            #undef IN
+            #undef __VRM_MTOON_FRAG_IN
+
             ENDHLSL
         }
 
@@ -171,7 +197,20 @@ Shader "Hidden/VRM10/vrmc_materials_mtoon"
             #pragma fragment MToonFragment
 
             #include "./vrmc_materials_mtoon_forward_vertex.hlsl"
+
+            // alias both names again for the included fragment
+            #ifndef __VRM_MTOON_FRAG_IN
+            #define __VRM_MTOON_FRAG_IN __vrm_mtoon_frag_in
+            #endif
+            #define i __VRM_MTOON_FRAG_IN
+            #define IN __VRM_MTOON_FRAG_IN
+
             #include "./vrmc_materials_mtoon_forward_fragment.hlsl"
+
+            #undef i
+            #undef IN
+            #undef __VRM_MTOON_FRAG_IN
+
             ENDHLSL
         }
 
