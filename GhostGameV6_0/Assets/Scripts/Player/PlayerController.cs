@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public GameObject Character;
 
+    private bool isMoving = false;
+
     [HideInInspector] public Vector3 dir;
 
     public bool hasInunity = false; // Flag to check if player has infinity energy
@@ -98,9 +100,18 @@ public class PlayerController : MonoBehaviour
 
 #if UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN
         {
-            float vertical = Input.GetAxis("Vertical");
 
-            dir = transform.forward * speed * vertical;
+
+           if(Input.GetKey(KeyCode.W))
+            {
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                isMoving = true;
+            }else
+            {
+                isMoving = false;
+            }
+
+            
 
             
 
@@ -123,9 +134,12 @@ public class PlayerController : MonoBehaviour
             }
         }
  
-        if (animator != null) // ✅ FIX: Null-Check
+        if (animator != null && isMoving == true) // ✅ FIX: Null-Check
         {
-            animator.SetFloat("speed", dir.magnitude);
+            animator.SetFloat("speed", speed);
+        }else if (animator != null && isMoving == false) // ✅ FIX: Null-Check
+        {
+            animator.SetFloat("speed", 0);
         }
 
 #endif
