@@ -26,8 +26,8 @@ public class interblock : MonoBehaviour
 
     void Awake()
     {
-
-        playerInventory = player.GetComponent<PlayerInventory>();
+        if (player != null)
+            playerInventory = player.GetComponent<PlayerInventory>();
 
         Portals = new GameObject[6];
 
@@ -43,6 +43,12 @@ public class interblock : MonoBehaviour
 
     public void OnDoorOpen()
     {
+        if (playerInventory == null)
+        {
+            Debug.LogWarning("Door has no player inventory.");
+            return;
+        }
+
         bool keyFound = false;
         string searchKey = itemName + " " + itemNumber;
 

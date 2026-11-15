@@ -44,52 +44,63 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBackgroundMusic()
     {
-        as_background.Play();
+        if (as_background != null)
+            as_background.Play();
     }
 
     public void StopBackgroundMusic()
     {
-        as_background.Stop();
+        if (as_background != null)
+            as_background.Stop();
     }
 
     public void PlayGameMusic(AudioClip clip)
     {
+        if (as_game == null)
+            return;
+
         as_game.clip = clip;
-
         as_game.Play();
-
     }
 
     public void StopGameMusic()
     {
+        if (as_game == null)
+            return;
+
         as_game.clip = null;
         as_game.Stop();
     }
 
     public void PlayOneShotSFX(AudioClip clip)
     {
-        as_sound.PlayOneShot(clip);
+        if (as_sound != null && clip != null)
+            as_sound.PlayOneShot(clip);
     }
 
-    public  void OnMusicVolumeChanged(float volume)
+    public void OnMusicVolumeChanged(float volume)
     {
-        as_background.volume = volume;
-        as_game.volume = volume;
+        if (as_background != null)
+            as_background.volume = volume;
+        if (as_game != null)
+            as_game.volume = volume;
     }
 
     public void OnSFXVolumeChanged(float vol)
     {
-        as_sound.volume = vol;
+        if (as_sound != null)
+            as_sound.volume = vol;
     }
-
 
     public void ShowSettings()
     {
-        go_SettingsHolder.SetActive(true);
+        if (go_SettingsHolder != null)
+            go_SettingsHolder.SetActive(true);
     }
 
     public void HideSettings()
     {
-        go_SettingsHolder.SetActive(false);
+        if (go_SettingsHolder != null)
+            go_SettingsHolder.SetActive(false);
     }
 }

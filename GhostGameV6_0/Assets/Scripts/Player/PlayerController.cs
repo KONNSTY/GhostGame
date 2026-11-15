@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
     public float health = 100;
     public float energy = 100;
 
+    bool deathSceneLoading;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -87,9 +89,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (health <= 0)
+        if (health <= 0 && !deathSceneLoading)
         {
+            deathSceneLoading = true;
+            health = 0f;
+            Time.timeScale = 1f;
             SceneManager.LoadScene(2);
+            return;
         }
 
    

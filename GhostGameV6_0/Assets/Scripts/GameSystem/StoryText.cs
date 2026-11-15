@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -53,8 +52,12 @@ public int STcurrentIndexInArray;
 
     void Start()
     {
-if(gm == null)
-gm = GameObject.Find("GameMode").GetComponent<GameMode>();
+        if (gm == null)
+        {
+            GameObject gameModeObject = GameObject.Find("GameMode");
+            if (gameModeObject != null)
+                gm = gameModeObject.GetComponent<GameMode>();
+        }
 
 STcurrentIndexInArray = -1;
 

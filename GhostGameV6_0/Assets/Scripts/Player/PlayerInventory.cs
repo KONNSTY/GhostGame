@@ -56,6 +56,37 @@ public class PlayerInventory : MonoBehaviour
         // Start-Initialisierung (falls nötig)
     }
 
+    static NoteInt NoteTypeFor(int itemNumber)
+    {
+        switch (itemNumber)
+        {
+            case 1: return NoteInt.Note1;
+            case 2: return NoteInt.Note2;
+            case 3: return NoteInt.Note3;
+            case 4: return NoteInt.Note4;
+            case 5: return NoteInt.Note5;
+            case 6: return NoteInt.Note6;
+            case 7: return NoteInt.Note7;
+            default: return NoteInt.Note1;
+        }
+    }
+
+    void ShowCollectedNote(NoteInt noteType)
+    {
+        if (noteSkript == null || noteSkript.NoteUiArray == null)
+            return;
+
+        int slots = noteSkript.NoteUiArray.Length < 3 ? noteSkript.NoteUiArray.Length : 3;
+        for (int i = 0; i < slots; i++)
+        {
+            if (noteSkript.NoteUiArray[i] != null)
+                noteSkript.NoteUiArray[i].SetActive(true);
+        }
+
+        noteSkript.type = (NoteSkript.NoteType)noteType;
+        Time.timeScale = 0f;
+    }
+
     // Debug-Methode zum Anzeigen des Inventorys
     public void PrintInventory()
     {
@@ -105,78 +136,12 @@ public class PlayerInventory : MonoBehaviour
                             AddItemNote(itemId.itemName, itemId.itemNumber);
                             Debug.Log($"Notiz aufgesammelt: {itemId.itemName} #{itemId.itemNumber}");
 
-                            // ✅ KORRIGIERT: Ntype basierend auf itemNumber setzen
-                            switch (itemId.itemNumber)
-                            {
-                                case 1: Ntype = NoteInt.Note1; break;
-                                case 2: Ntype = NoteInt.Note2; break;
-                                case 3: Ntype = NoteInt.Note3; break;
-                                case 4: Ntype = NoteInt.Note4; break;
-                                case 5: Ntype = NoteInt.Note5; break;
-                                case 6: Ntype = NoteInt.Note6; break;
-                                case 7: Ntype = NoteInt.Note7; break;
-                                default: Ntype = NoteInt.Note1; break;
-                            }
-
-                            Debug.Log($"🎯 Note Type gesetzt auf: {Ntype}");
-
+                            Ntype = NoteTypeFor(itemId.itemNumber);
                             Destroy(other.gameObject);
-
-                            // Jetzt wird der richtige Case ausgeführt
-                            switch (Ntype)
-                            {
-                                case NoteInt.Note1:
-                                    noteSkript.NoteUiArray[0].SetActive(true);
-                                    noteSkript.NoteUiArray[1].SetActive(true);
-                                    noteSkript.NoteUiArray[2].SetActive(true);
-                                    noteSkript.type = NoteSkript.NoteType.Note1;
-                                    Time.timeScale = 0f;
-                                    Debug.Log("✅ Time.timeScale auf 0 gesetzt (Note1)");
-                                    break;
-                                case NoteInt.Note2:
-                                    noteSkript.NoteUiArray[0].SetActive(true);
-                                    noteSkript.NoteUiArray[1].SetActive(true);
-                                    noteSkript.NoteUiArray[2].SetActive(true);
-                                    noteSkript.type = NoteSkript.NoteType.Note2;
-                                    Time.timeScale = 0f;
-                                    Debug.Log("✅ Time.timeScale auf 0 gesetzt (Note2)");
-                                    break;
-                                case NoteInt.Note3:
-                                    noteSkript.NoteUiArray[0].SetActive(true);
-                                    noteSkript.NoteUiArray[1].SetActive(true);
-                                    noteSkript.NoteUiArray[2].SetActive(true);
-                                    noteSkript.type = NoteSkript.NoteType.Note3;
-                                    Time.timeScale = 0f;
-                                    Debug.Log("✅ Time.timeScale auf 0 gesetzt (Note3)");
-                                    break;
-                                case NoteInt.Note4:
-                                    noteSkript.NoteUiArray[0].SetActive(true);
-                                    noteSkript.NoteUiArray[1].SetActive(true);
-                                    noteSkript.NoteUiArray[2].SetActive(true);
-                                    noteSkript.type = NoteSkript.NoteType.Note4;
-                                    Time.timeScale = 0f;
-                                    Debug.Log("✅ Time.timeScale auf 0 gesetzt (Note4)");
-                                    break;
-                                case NoteInt.Note5:
-                                    noteSkript.NoteUiArray[0].SetActive(true);
-                                    noteSkript.NoteUiArray[1].SetActive(true);
-                                    noteSkript.NoteUiArray[2].SetActive(true);
-                                    noteSkript.type = NoteSkript.NoteType.Note5;
-                                    Time.timeScale = 0f;
-                                    Debug.Log("✅ Time.timeScale auf 0 gesetzt (Note5)");
-                                    break;
-                                case NoteInt.Note6:
-                                    noteSkript.NoteUiArray[0].SetActive(true);
-                                    noteSkript.NoteUiArray[1].SetActive(true);
-                                    noteSkript.NoteUiArray[2].SetActive(true);
-                                    noteSkript.type = NoteSkript.NoteType.Note6;
-                                    Time.timeScale = 0f;
-                                    Debug.Log("✅ Time.timeScale auf 0 gesetzt (Note6)");
-                                    break;
-                                case NoteInt.Note7:
-                                    Debug.Log("No Skript Assigned");
-                                    break;
-                            }
+                            if (Ntype != NoteInt.Note7)
+                                ShowCollectedNote(Ntype);
+                            else
+                                Debug.Log("No Skript Assigned");
                         }
                     }
                 }

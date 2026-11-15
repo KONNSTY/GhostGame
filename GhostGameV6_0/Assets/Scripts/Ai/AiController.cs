@@ -457,22 +457,14 @@ public class AiController : MonoBehaviour
     {
         if (isDead) return;
 
-        Debug.Log($"🔍 AI {gameObject.name} OnTriggerStay mit: {other.gameObject.name} (Tag: {other.tag})");
-
-        if (other.CompareTag("player")) // ✅ FIX: Use lowercase p
+        if (other.CompareTag("player"))
         {
             state = AiState.AttackPlayer;
             isAttacking = true;
-            Debug.Log($"🎯 AI {gameObject.name} kollidiert mit Player - AttackPlayer State aktiviert!");
         }
-        else if (other.CompareTag("weapon")) // ✅ FIX: Verwende Weapon Tag statt Spot Light name
+        else if (other.CompareTag("weapon"))
         {
             AiShouldEscape = true;
-            Debug.Log($"💡 AI {gameObject.name} flüchtet vor Licht!");
-        }
-        else
-        {
-            Debug.LogWarning($"⚠️ AI {gameObject.name}: Kollision mit {other.gameObject.name} aber falscher Tag: '{other.tag}' (erwartet 'player' oder 'weapon')");
         }
     }
 

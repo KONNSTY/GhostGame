@@ -66,6 +66,8 @@ public bool BossDefeated = false;
 
     [HideInInspector] public bool shouldAiSpawnerAllDeactivate;
 
+    bool reportedMissingRefs;
+
     public GameObject FirstCutSceneCanvasObj;
 
     [System.Serializable]
@@ -90,27 +92,40 @@ public bool BossDefeated = false;
 
     void Start()
     {
-        dirLightAnimator = DirectionalLight.GetComponent<Animator>();
-        weaponInLight = WeaponInLightObj.GetComponent<WeaponInLight>();
-
-        playerInventory = Player.GetComponent<PlayerInventory>();
+        if (DirectionalLight != null)
+            dirLightAnimator = DirectionalLight.GetComponent<Animator>();
+        if (WeaponInLightObj != null)
+            weaponInLight = WeaponInLightObj.GetComponent<WeaponInLight>();
+        if (Player != null)
+            playerInventory = Player.GetComponent<PlayerInventory>();
 
         for (int i = 0; i < Portals.Length; i++)
         {
             if (Portals[i] == null)
                 Portals[i] = GameObject.Find("Portal blue" + i);
         }
-         
-         for (int i = 0; i < interblocksObj.Length; i++)
-         {
-        interblocksObj[i] = Portals[i].GetComponent<interblock>();
-         }
+
+        for (int i = 0; i < interblocksObj.Length; i++)
+        {
+            if (i < Portals.Length && Portals[i] != null)
+                interblocksObj[i] = Portals[i].GetComponent<interblock>();
+        }
 
         shouldAiSpawnerAllDeactivate = false;
     }
 
     void Update()
     {
+        if (missionText == null || dirLightAnimator == null || weaponInLight == null || playerInventory == null || FirstCutSceneCanvasObj == null)
+        {
+            if (!reportedMissingRefs)
+            {
+                reportedMissingRefs = true;
+                Debug.LogError("GameMode is missing a required reference.");
+            }
+            return;
+        }
+
         // ✅ HINZUGEFÜGT: Performance-Optimierung - Goals nur einmal pro Mission aktivieren
         if (currentMIssion != lastProcessedMission)
         {

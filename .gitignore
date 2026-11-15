@@ -15,10 +15,12 @@ UserSettings/
 # Visual Studio/IDE  #
 # ================== #
 
+.vs/
 .vscode/
 .idea/
 *.sln
 *.csproj
+!GhostGameV6_0/Tools/**/*.csproj
 *.unityproj
 *.suo
 *.tmp
@@ -51,6 +53,11 @@ ehthumbs.db
 # ================= #
 
 sysinfo.txt
+mono_crash*.json
+
+# Local test build output
+GhostGameV6_0/Tools/**/bin/
+GhostGameV6_0/Tools/**/obj/
 
 # ================= #
 # Asset Store tools #

@@ -27,13 +27,14 @@ public class NPCAi : MonoBehaviour
 
     void Awake()
     {
-        target2.position = transform.position;
+        if (target2 != null)
+            target2.position = transform.position;
     }
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        // Set target2 position to the empty target's position)
-
+        if (agent == null)
+            return;
 
         agent.stoppingDistance = 0;
         dontDoAgain = false;
@@ -43,9 +44,14 @@ public class NPCAi : MonoBehaviour
 
     void Update()
     {
+        if (agent == null)
+            return;
+
         switch (state)
         {
             case AiMovement.FirstGaol:
+                if (target1 == null)
+                    break;
                 agent.isStopped = false;
                 agent.SetDestination(target1.position);
 
@@ -62,6 +68,8 @@ public class NPCAi : MonoBehaviour
                 break;
 
             case AiMovement.SecondGoal:
+                if (target2 == null)
+                    break;
                 agent.isStopped = false;
                 agent.SetDestination(target2.position);
                 

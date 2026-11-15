@@ -1,75 +1,136 @@
-using UnityEngine;
+using System;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine;
 
 public static class SaveSystem
 {
     private static string SavePath => Application.persistentDataPath + "/player.save";
 
-    // Bestehende Save-Methode
     public static void SavePlayer(GameMode gamemode, GameObject player)
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = new FileStream(SavePath, FileMode.Create);
+        if (gamemode == null || player == null)
+        {
+            Debug.LogError("Save aborted: missing game mode or player.");
+            return;
+        }
 
         PlayerData data = new PlayerData(gamemode, player);
+        if (data.position == null || data.position.Length < 3)
+            return;
 
-        formatter.Serialize(stream, data);
-        stream.Close();
+        var save = new GhostSaveData
+        {
+            Mission = (int)data.type,
+            X = data.position[0],
+            Y = data.position[1],
+            Z = data.position[2],
+            Keys = data.KeyName ?? Array.Empty<string>(),
+            Notes = data.NoteName ?? Array.Empty<string>()
+        };
 
-        Debug.Log("Spiel gespeichert in: " + SavePath);
+        if (!GhostSaveCodec.TryEncode(save, out byte[] bytes))
+        {
+            Debug.LogError("Save aborted: player data was rejected.");
+            return;
+        }
+
+        string tempPath = SavePath + ".tmp";
+        try
+        {
+            File.WriteAllBytes(tempPath, bytes);
+            File.Copy(tempPath, SavePath, true);
+            Debug.Log("Spiel gespeichert.");
+        }
+        catch (Exception)
+        {
+            Debug.LogError("Save aborted: the save file could not be written.");
+        }
+        finally
+        {
+            try
+            {
+                if (File.Exists(tempPath))
+                    File.Delete(tempPath);
+            }
+            catch (Exception)
+            {
+                Debug.LogWarning("Temporary save file could not be removed.");
+            }
+        }
     }
 
-    // Bestehende Load-Methode
     public static PlayerData Loadgame()
     {
-        if (File.Exists(SavePath))
+        if (!TryReadSaveBytes(out byte[] bytes))
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(SavePath, FileMode.Open);
-            PlayerData data = formatter.Deserialize(stream) as PlayerData;
-            stream.Close();
-            
-            Debug.Log("Spiel geladen von: " + SavePath);
-            return data;
-        }
-        else
-        {
-            Debug.LogError("Save file not found in " + SavePath);
+            Debug.LogError("Save file not found or was rejected.");
             return null;
         }
+
+        if (!GhostSaveCodec.TryDecode(bytes, out GhostSaveData save))
+        {
+            Debug.LogError("Save file was rejected.");
+            return null;
+        }
+
+        Debug.Log("Spiel geladen.");
+        return PlayerData.FromLoaded(save);
     }
 
-    // ✅ NEU: Prüfen ob Savegame existiert
     public static bool HasSaveFile()
     {
-        return File.Exists(SavePath);
+        if (!TryReadSaveBytes(out byte[] bytes))
+            return false;
+
+        return GhostSaveCodec.TryDecode(bytes, out _);
     }
 
-    // ✅ NEU: Savegame löschen (für New Game)
     public static void DeleteSaveFile()
     {
-        if (File.Exists(SavePath))
+        try
         {
-            File.Delete(SavePath);
-            Debug.Log("Altes Savegame gelöscht: " + SavePath);
+            if (File.Exists(SavePath))
+            {
+                File.Delete(SavePath);
+                Debug.Log("Altes Savegame gelöscht.");
+            }
+            else
+            {
+                Debug.Log("Kein Savegame zum Löschen gefunden.");
+            }
         }
-        else
+        catch (Exception)
         {
-            Debug.Log("Kein Savegame zum Löschen gefunden.");
+            Debug.LogError("Save file could not be deleted.");
         }
     }
 
-    // ✅ NEU: Neues Spiel starten (löscht altes Savegame)
     public static void StartNewGame(GameMode gamemode, GameObject player)
     {
-        // Altes Savegame löschen
         DeleteSaveFile();
-        
-        // Neues Savegame erstellen
         SavePlayer(gamemode, player);
-        
         Debug.Log("Neues Spiel gestartet und gespeichert!");
     }
-}
 
+    static bool TryReadSaveBytes(out byte[] bytes)
+    {
+        bytes = null;
+        try
+        {
+            if (!File.Exists(SavePath))
+                return false;
+
+            var info = new FileInfo(SavePath);
+            if (info.Length <= 0 || info.Length > GhostSaveCodec.MaxBytes)
+                return false;
+
+            bytes = File.ReadAllBytes(SavePath);
+            return bytes.Length > 0 && bytes.Length <= GhostSaveCodec.MaxBytes;
+        }
+        catch (Exception)
+        {
+            bytes = null;
+            return false;
+        }
+    }
+}

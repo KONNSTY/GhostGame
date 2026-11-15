@@ -10,6 +10,30 @@ public class PlayerData
     public int[] KeyID;
     public int[] NoteID;
 
+    public PlayerData()
+    {
+    }
+
+    public static PlayerData FromLoaded(GhostSaveData save)
+    {
+        var data = new PlayerData();
+        data.type = (GameMode.MissionType)save.Mission;
+        data.position = new float[] { save.X, save.Y, save.Z };
+        data.KeyName = save.Keys ?? new string[0];
+        data.NoteName = save.Notes ?? new string[0];
+        data.KeyID = IndexIds(data.KeyName.Length);
+        data.NoteID = IndexIds(data.NoteName.Length);
+        return data;
+    }
+
+    static int[] IndexIds(int length)
+    {
+        int[] ids = new int[length];
+        for (int i = 0; i < length; i++)
+            ids[i] = i;
+        return ids;
+    }
+
     public PlayerData(GameMode gameMode, GameObject playerObject = null)
     {
         // Wenn kein Player übergeben wurde, automatisch suchen
@@ -18,7 +42,7 @@ public class PlayerData
             playerObject = FindPlayerObject();
         }
         
-        if (playerObject != null)
+        if (playerObject != null && gameMode != null)
         {
             // Mission speichern
             type = gameMode.currentMIssion;
@@ -34,25 +58,23 @@ public class PlayerData
         }
         else
         {
-            Debug.LogError("Player GameObject nicht gefunden!");
+            Debug.LogError("Player oder GameMode nicht gefunden!");
         }
     }
 
     GameObject FindPlayerObject()
     {
-        // Methode 1: Über Tag
         GameObject player = GameObject.Find("Player");
-        if (player != null) return player;
+        if (player != null)
+            return player;
 
+        PlayerController playerController = UnityEngine.Object.FindAnyObjectByType<PlayerController>();
+        if (playerController != null)
+            return playerController.gameObject;
 
-
-        // Methode 3: Über Component
-        PlayerController playerController = player.GetComponent<PlayerController>();
-        if (playerController != null) return playerController.gameObject;
-
-        // Methode 4: Über PlayerInventory Component
-        PlayerInventory inventory = player.GetComponent<PlayerInventory>();
-        if (inventory != null) return inventory.gameObject;
+        PlayerInventory inventory = UnityEngine.Object.FindAnyObjectByType<PlayerInventory>();
+        if (inventory != null)
+            return inventory.gameObject;
 
         return null;
     }

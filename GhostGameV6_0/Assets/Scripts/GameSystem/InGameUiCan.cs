@@ -15,16 +15,10 @@ public class InGameUiCan : MonoBehaviour
 
     void Update()
     {
-        if (BigMapEnable == true)
-        {
+        if (BigMapRawImage == null)
+            return;
 
-            BigMapRawImage.SetActive(true); // Assuming you want to show the raw image when the map is enabled
-        }
-        else
-        {
-
-            BigMapRawImage.SetActive(false);
-        }
+        BigMapRawImage.SetActive(BigMapEnable);
     }
 
     public void ClickMapEnable()

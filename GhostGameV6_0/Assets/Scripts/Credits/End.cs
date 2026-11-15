@@ -1,9 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using Photon.Realtime;
-using Unity.VisualScripting;
 
 public class End : MonoBehaviour
 {
@@ -15,47 +12,43 @@ public class End : MonoBehaviour
 
     public Animator ImageAnimator;
 
+    bool endingStarted;
 
     void Start()
     {
         if (Loading == null)
         {
-            Loading = GameObject.Find("Loading").GetComponent<Canvas>();
+            GameObject found = GameObject.Find("Loading");
+            if (found != null)
+                Loading = found.GetComponent<Canvas>();
         }
 
-        if (ImageBackground == null)
-        {
+        if (ImageBackground == null && Loading != null && Loading.transform.childCount > 0)
             ImageBackground = Loading.transform.GetChild(0).gameObject;
-        }
 
-        if (ImageAnimator == null)
-        {
+        if (ImageAnimator == null && ImageBackground != null)
             ImageAnimator = ImageBackground.GetComponent<Animator>();
-
-        }
-
-
-
-
     }
 
     void Update()
     {
+        if (endingStarted || endObj == null)
+            return;
+
         float distance = Vector3.Distance(transform.position, endObj.position);
-
-        Debug.Log("Distance to End: " + distance);
-
-        if (distance < 10)
+        if (distance < 10f)
         {
+            endingStarted = true;
             StartCoroutine(WaitForDarkness(3f));
         }
     }
 
-
     IEnumerator WaitForDarkness(float waitTime)
     {
-        ImageAnimator.SetBool("isFading", true);
+        if (ImageAnimator != null)
+            ImageAnimator.SetBool("isFading", true);
         yield return new WaitForSeconds(waitTime);
-   SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 }

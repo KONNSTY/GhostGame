@@ -47,8 +47,12 @@ public class MainMenu : MonoBehaviour
         {
             NewGameCanvas8.gameObject.SetActive(false);
         }
-        if(LoadingCanvas == null)
-        LoadingCanvas = GameObject.Find("LoadingCanvas").GetComponent<Canvas>();
+        if (LoadingCanvas == null)
+        {
+            GameObject loadingObject = GameObject.Find("LoadingCanvas");
+            if (loadingObject != null)
+                LoadingCanvas = loadingObject.GetComponent<Canvas>();
+        }
 
         // ✅ NEU: Überprüfe Savegame-Status beim Start
             CheckSaveGameStatus();
@@ -132,10 +136,7 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("IsNewGame", 1);
         PlayerPrefs.Save();
 
-        // Spiel laden (mit Scene-Index wie original)
-        LoadingCanvas.gameObject.SetActive(true);
-        DontDestroyOnLoad(LoadingCanvas.gameObject);
-        SceneManager.LoadScene(gameSceneIndex);
+        ShowLoadingAndStart(gameSceneIndex);
     }
 
     public void LoadGameSystem()
@@ -149,10 +150,7 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetInt("IsNewGame", 0);
             PlayerPrefs.Save();
             
-            // Spiel laden (mit Scene-Index wie original)
-              LoadingCanvas.gameObject.SetActive(true);
-        DontDestroyOnLoad(LoadingCanvas.gameObject);
-            SceneManager.LoadScene(gameSceneIndex);
+            ShowLoadingAndStart(gameSceneIndex);
         }
         else
         {
@@ -182,6 +180,17 @@ public class MainMenu : MonoBehaviour
         MPCanvas3.gameObject.SetActive(false);
         SettingsCanvas4.gameObject.SetActive(false);
         MPCanvas5.gameObject.SetActive(false);
+    }
+
+    void ShowLoadingAndStart(int sceneIndex)
+    {
+        if (LoadingCanvas != null)
+        {
+            LoadingCanvas.gameObject.SetActive(true);
+            DontDestroyOnLoad(LoadingCanvas.gameObject);
+        }
+
+        SceneManager.LoadScene(sceneIndex);
     }
 
     public void QuitGame()

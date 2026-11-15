@@ -137,8 +137,6 @@ public class AiBoss : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(state + " : Current State of " + gameObject.name);
-
         if (healthBar != null)
         {
             healthBar.fillAmount = health / 300f; // ✅ BOSS: Health Bar für 300 HP

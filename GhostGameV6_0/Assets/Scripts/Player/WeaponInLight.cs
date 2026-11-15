@@ -1,9 +1,4 @@
-using JetBrains.Annotations;
-using TMPro;
-
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
 
 public class WeaponInLight : MonoBehaviour
 {
@@ -37,11 +32,14 @@ public class WeaponInLight : MonoBehaviour
     void Start()
     {
         spotLight = GetComponent<Light>();
-        player = transform.parent.gameObject; // Assuming this script is attached to a child of the player
-        pcontroller = player.GetComponent<PlayerController>();
-        lightIntensity = spotLight.intensity; // Store the initial intensity
+        if (transform.parent != null)
+            player = transform.parent.gameObject;
+        if (player != null)
+            pcontroller = player.GetComponent<PlayerController>();
+        if (spotLight != null)
+            lightIntensity = spotLight.intensity;
         canAiBeDamaged = false;
-        FXLight.SetActive(false);
+        SetFxActive(false);
     
 
        
@@ -51,7 +49,8 @@ public class WeaponInLight : MonoBehaviour
 
     void Update()
     {
-   
+        if (pcontroller == null || spotLight == null)
+            return;
 
         if (pcontroller.energy == 100)
         {
@@ -77,14 +76,13 @@ public class WeaponInLight : MonoBehaviour
         
         */
 #if UNITY_IOS
+        if (Input.touchCount > 0)
         {
-        
-
         touch = Input.GetTouch(0);
 
     if(killCount == 3)
     {
-        playerController.Maxhealthitem = 3;
+        pcontroller.Maxhealthitem = 3;
     }
 
         if (touch.phase == TouchPhase.Began)
@@ -158,7 +156,7 @@ Mouse
                 if (pcontroller.energy > 10)
                 {
                     spotLight.intensity = 300f;
-                    FXLight.SetActive(true);
+                    SetFxActive(true);
                     
 
                     pcontroller.energy -= 30f * Time.deltaTime; // Reduce energy while the light is on
@@ -174,20 +172,20 @@ Mouse
                     spotLight.color = Color.white;
                     canAiBeDamaged = false; // Enable damage to AI when the light is on
                     keyUP = true;
-                    FXLight.SetActive(false);
+                    SetFxActive(false);
                 }
             }
         } else if (isUnableToUsWeapon == true)
         {
             spotLight.intensity = 0f;
-            FXLight.SetActive(false);
+            SetFxActive(false);
             canAiBeDamaged = false;
         }
 
         if (Input.GetMouseButtonUp(0))
             {
                 spotLight.intensity = lightIntensity;
-                FXLight.SetActive(false);
+                SetFxActive(false);
              
 
                 canAiBeDamaged = false;
@@ -211,7 +209,8 @@ Mouse
                 ai.shouldGoback = false; // Reset für neue GoBack-Bewegung
                 
                 // AI stoppen und Schaden zufügen
-                ai.navMeshAgent.ResetPath();
+                if (ai.navMeshAgent != null)
+                    ai.navMeshAgent.ResetPath();
                 ai.health -= lightdamage;
                 ai.shockenable = true; // Activate shock effect on AI
                 
@@ -230,7 +229,8 @@ Mouse
                 aiBoss.shouldGoback = false; // Reset für neue GoBack-Bewegung
                 
                 // AI Boss stoppen und Schaden zufügen
-                aiBoss.navMeshAgent.ResetPath();
+                if (aiBoss.navMeshAgent != null)
+                    aiBoss.navMeshAgent.ResetPath();
                 aiBoss.health -= lightdamage;
                 aiBoss.shockenable = true; // Activate shock effect on AI Boss
                 
@@ -279,12 +279,9 @@ Mouse
         }
     }
 
-
-        
-    
-    
-
-
-
-
+    void SetFxActive(bool active)
+    {
+        if (FXLight != null)
+            FXLight.SetActive(active);
+    }
 }

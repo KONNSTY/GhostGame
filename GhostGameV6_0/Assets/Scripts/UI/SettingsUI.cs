@@ -13,19 +13,24 @@ public class SettingsUI : MonoBehaviour
 
     private void Start()
     {
-        slider_Music.onValueChanged.AddListener(OnMusicVolumeChanged);
-        slider_sfx.onValueChanged.AddListener(OnSFXValueChanged);
-        dropdown_quality.onValueChanged.AddListener(OnQualitySettingsChanged);
+        if (slider_Music != null)
+            slider_Music.onValueChanged.AddListener(OnMusicVolumeChanged);
+        if (slider_sfx != null)
+            slider_sfx.onValueChanged.AddListener(OnSFXValueChanged);
+        if (dropdown_quality != null)
+            dropdown_quality.onValueChanged.AddListener(OnQualitySettingsChanged);
     }
 
     private void OnMusicVolumeChanged(float volume)
     {
-        AudioManager.Singleton.OnMusicVolumeChanged(volume);
+        if (AudioManager.Singleton != null)
+            AudioManager.Singleton.OnMusicVolumeChanged(volume);
     }
 
     private void OnSFXValueChanged(float volume)
     {
-        AudioManager.Singleton.OnSFXVolumeChanged(volume);
+        if (AudioManager.Singleton != null)
+            AudioManager.Singleton.OnSFXVolumeChanged(volume);
     }
 
     private void OnQualitySettingsChanged(int value)
@@ -46,7 +51,8 @@ public class SettingsUI : MonoBehaviour
 
     public void OnClose()
     {
-        AudioManager.Singleton.HideSettings();
+        if (AudioManager.Singleton != null)
+            AudioManager.Singleton.HideSettings();
     }
 }
 

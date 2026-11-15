@@ -27,9 +27,8 @@ public class PauseMenu : MonoBehaviour
             TogglePauseMenu();
         }
 
-        if (isPaused == false)
+        if (isPaused == false && canvas != null && canvas.gameObject.activeSelf)
         {
-            Time.timeScale = 1.0f;
             canvas.gameObject.SetActive(false);
         }
     }
@@ -41,13 +40,15 @@ public class PauseMenu : MonoBehaviour
         if (isPaused == false)
         {
             isGamePaused = false;
-            canvas.gameObject.SetActive(false);
+            if (canvas != null)
+                canvas.gameObject.SetActive(false);
             Time.timeScale = 1f;
         }
         else if (isPaused == true)
         {
             isGamePaused = true;
-           canvas.gameObject.SetActive(true);
+            if (canvas != null)
+                canvas.gameObject.SetActive(true);
             Time.timeScale = 0f;
         }
     }
@@ -59,6 +60,9 @@ public class PauseMenu : MonoBehaviour
 
     public void OnHomeButton()
     {
+        Time.timeScale = 1f;
+        isPaused = false;
+        isGamePaused = false;
         SceneManager.LoadScene(0);
     }
 }

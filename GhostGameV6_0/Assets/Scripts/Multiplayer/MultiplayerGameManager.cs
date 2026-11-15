@@ -44,7 +44,27 @@ public class MultiplayerGameManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
-        this.roomList = roomList;
+        if (roomList == null)
+            return;
+
+        foreach (RoomInfo info in roomList)
+        {
+            if (info == null || string.IsNullOrEmpty(info.Name))
+                continue;
+
+            int index = this.roomList.FindIndex(room => room.Name == info.Name);
+            if (info.RemovedFromList)
+            {
+                if (index >= 0)
+                    this.roomList.RemoveAt(index);
+                continue;
+            }
+
+            if (index >= 0)
+                this.roomList[index] = info;
+            else
+                this.roomList.Add(info);
+        }
     }
 
     public void FindPUblicRoom()
@@ -54,18 +74,11 @@ public class MultiplayerGameManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
 
         foreach (RoomInfo room in roomList)
         {
-            // Prüfe ob Raum öffentlich und verfügbar ist
-            if (room.PlayerCount < room.MaxPlayers && room.IsOpen && room.IsVisible)
+            if (IsJoinablePublicRoom(room))
             {
-                // Prüfe ob es ein öffentlicher Raum ist
-                if (room.CustomProperties != null &&
-                    room.CustomProperties.ContainsKey("isPrivate") &&
-                    !(bool)room.CustomProperties["isPrivate"])
-                {
-                    found = true;
-                    foundedRoom = room;
-                    break;
-                }
+                found = true;
+                foundedRoom = room;
+                break;
             }
         }
 
@@ -89,6 +102,7 @@ public class MultiplayerGameManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
         {
             {"isPrivate", false }
         };
+        roomOptions.CustomRoomPropertiesForLobby = new[] { "isPrivate" };
         PhotonNetwork.CreateRoom(roomCode, roomOptions);
 
     }
@@ -108,6 +122,19 @@ public class MultiplayerGameManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
     {
         string roomCode = "Room" + UnityEngine.Random.Range(10000, 99999);
         return roomCode;
+    }
+
+    static bool IsJoinablePublicRoom(RoomInfo room)
+    {
+        if (room == null || room.RemovedFromList || !room.IsOpen || !room.IsVisible)
+            return false;
+        if (room.PlayerCount >= room.MaxPlayers)
+            return false;
+        if (room.CustomProperties == null || !room.CustomProperties.ContainsKey("isPrivate"))
+            return false;
+
+        object value = room.CustomProperties["isPrivate"];
+        return value is bool isPrivate && !isPrivate;
     }
 
     public override void OnJoinedRoom()

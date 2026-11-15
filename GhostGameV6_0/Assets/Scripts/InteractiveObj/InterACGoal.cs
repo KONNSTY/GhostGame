@@ -1,5 +1,3 @@
-using System.Net.Sockets;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class InterACGoal : MonoBehaviour
@@ -49,11 +47,13 @@ public class InterACGoal : MonoBehaviour
 
         if (other.CompareTag("player"))
         {
+            if (gm == null)
+                return;
+
             gm.currentMIssion = missiontype;
-
-
             SaveSystem.SavePlayer(gm, other.gameObject);
-            storyText.StartMissionStory();
+            if (storyText != null)
+                storyText.StartMissionStory();
             gameObject.SetActive(false);
 
            
